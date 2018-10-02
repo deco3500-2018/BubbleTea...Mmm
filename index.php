@@ -15,7 +15,7 @@
 
 		<ons-toolbar>
 			<div class="left">
-				<ons-toolbar-button icon="md-face"></ons-toolbar-button>
+				<ons-toolbar-button icon="md-account-circle"></ons-toolbar-button>
 			</div>
 
 			<div class="center">Title</div>
