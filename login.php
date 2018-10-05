@@ -1,6 +1,67 @@
 <?php
 include "start.php";
 
+
+
+if(isset($_POST['login_btn']))
+{
+	
+    $email=mysqli_real_escape_string($db,$_POST['email']);
+    $password=mysqli_real_escape_string($db,$_POST['password']);
+   // $userID=mysqli_real_escape_string($db,$_GET['id']);
+   
+    //$hash=md5($password); //Remember we hashed password before storing last time
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+   
+
+    $sql="SELECT * FROM users WHERE email='$email' and password='$password'";
+    $result=mysqli_query($db,$sql);
+	
+
+    
+        
+        if (password_verify($password, $hash))
+        {
+            $_SESSION['correctPassword'] =true;
+			//echo "correct password!<br>";
+			
+        }
+		else {
+			echo 'Invalid password.';
+		}
+    
+    
+
+   if( $_SESSION['correctPassword'] =true)  
+  //  if(password_verify($password, $hash))
+    {
+		//echo "correct password!<br>";
+		
+        $email = mysqli_fetch_assoc($result);
+       // $_SESSION['message']="You are now Loggged In ";
+    //    $_SESSION['username']=$username;
+      //  $_SESSION['user'] = $user;
+     //   $_SESSION['loggedin']=true;
+       // $_SESSION["userID"] = $resultID;
+
+        header("location:index.php");
+
+      
+        //echo $_SESSION["userID"];
+    }
+   else
+   {
+         $_SESSION['message']="Username and Password combination incorrect";
+    }
+}
+
+
+
+    if(isset($_POST['register_btn']))
+    {
+        header("location:register.php");
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +90,42 @@ include "start.php";
 				<ons-toolbar-button>+</ons-toolbar-button>
 			</div>
 		</ons-toolbar>
+		
+		<form method="post" action="login.php">
 
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4" style="padding-top: 50px; padding-bottom: 70px; padding-left: 70px; padding-right: 70px; font-family: 'Raleway';">
+      <h1>Log In</h1>
+      <br>
+       <p style="float:left;">Email : </p>
+       <p> 
+        <input type="text" name="email" class="textInput form-control" required>
+      </p>
+    </p>
+    <p>
+     <p style="float:left;">Password : </p>
+     <p><input type="password" name="password" class="textInput form-control" required></p>
+   </p>
+   <p>
+     <br>
+     <p><input type="submit" name="login_btn" class="btn btn-success"></p>
+   </p>
+   <p>
+
+     <p><input style="float:left; display: inline-block;" type="button" value="Register" name="register_btn" class="btn btn-info" onclick="location.href='register.php'">
+      <br>
+      <br>
+      <small class="text-muted">Don't have an account?</small>
+    </p>
+  </p>
+</div>
+</div>
+
+</form>
+
+<!--
 		<p class="intro">
 			This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
 		</p>
@@ -93,6 +189,7 @@ include "start.php";
 
 
 </ons-page>
+	-->
 
 </body>
 
