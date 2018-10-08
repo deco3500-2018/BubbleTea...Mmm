@@ -61,7 +61,7 @@ if(isset($_POST['login_btn']))
     {
         header("location:register.php");
     }
-
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -119,6 +119,23 @@ if(isset($_POST['login_btn']))
       <br>
       <small class="text-muted">Don't have an account?</small>
     </p>
+	<?php
+		// Facebook API
+	require_once( 'vendor/autoload.php' );
+	// Initialize the Facebook PHP SDK v5.
+	$fb = new Facebook\Facebook([
+	  'app_id'                => '736882723323708',
+	  'app_secret'            => '67e1b3111e10c972cab13cc1564c95fb',
+	  'default_graph_version' => 'v2.10',
+	]);
+
+	$helper = $fb->getRedirectLoginHelper();
+
+	$permissions = ['email']; // Optional permissions
+	$loginUrl = $helper->getLoginUrl('http://localhost/In%20the%20Moment/fb-callback.php', $permissions);
+
+	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+	?>
   </p>
 </div>
 </div>
