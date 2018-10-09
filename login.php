@@ -6,62 +6,62 @@ include "start.php";
 if(isset($_POST['login_btn']))
 {
 	
-    $email=mysqli_real_escape_string($db,$_POST['email']);
-    $password=mysqli_real_escape_string($db,$_POST['password']);
+	$email=mysqli_real_escape_string($db,$_POST['email']);
+	$password=mysqli_real_escape_string($db,$_POST['password']);
    // $userID=mysqli_real_escape_string($db,$_GET['id']);
-   
-    //$hash=md5($password); //Remember we hashed password before storing last time
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-   
 
-    $sql="SELECT * FROM users WHERE email='$email' and password='$password'";
-    $result=mysqli_query($db,$sql);
+    //$hash=md5($password); //Remember we hashed password before storing last time
+	$hash = password_hash($password, PASSWORD_DEFAULT);
+
+
+	$sql="SELECT * FROM users WHERE email='$email' and password='$password'";
+	$result=mysqli_query($db,$sql);
 	
 
-    
-        
-        if (password_verify($password, $hash))
-        {
-            $_SESSION['correctPassword'] =true;
-			//echo "correct password!<br>";
-			
-        }
-		else {
-			echo 'Invalid password.';
-		}
-    
-    
 
-   if( $_SESSION['correctPassword'] =true)  
+
+	if (password_verify($password, $hash))
+	{
+		$_SESSION['correctPassword'] =true;
+			//echo "correct password!<br>";
+
+	}
+	else {
+		echo 'Invalid password.';
+	}
+
+
+
+	if( $_SESSION['correctPassword'] =true)  
   //  if(password_verify($password, $hash))
-    {
+	{
 		//echo "correct password!<br>";
 		
-        $email = mysqli_fetch_assoc($result);
+		$email = mysqli_fetch_assoc($result);
        // $_SESSION['message']="You are now Loggged In ";
     //    $_SESSION['username']=$username;
       //  $_SESSION['user'] = $user;
      //   $_SESSION['loggedin']=true;
        // $_SESSION["userID"] = $resultID;
 
-        header("location:index.php");
+		header("location:index.php");
 
-      
+
         //echo $_SESSION["userID"];
-    }
-   else
-   {
-         $_SESSION['message']="Username and Password combination incorrect";
-    }
+	}
+	else
+	{
+		$_SESSION['message']="Username and Password combination incorrect";
+	}
 }
 
 
 
-    if(isset($_POST['register_btn']))
-    {
-        header("location:register.php");
-    }
-	
+if(isset($_POST['register_btn']))
+{
+	header("location:register.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,137 +76,107 @@ if(isset($_POST['login_btn']))
 
 <body>
 
-	<ons-page>
+<!-- <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
 
-		<ons-toolbar>
-			<div class="left">
-				<ons-toolbar-button icon="md-account-circle"></ons-toolbar-button>
-			</div>
+<ons-page id="login-bg">
 
-			<div class="center">Title</div>
+	<style type="text/css">
+	#login-bg .page__background {
+		background-image: url('img/login2.jpeg');
+		height: auto;
+		width: 100%;
+		object-fit: cover;
+		background-repeat: no-repeat;
+	}
 
-			<div class="right">
-				<ons-toolbar-button>-</ons-toolbar-button>
-				<ons-toolbar-button>+</ons-toolbar-button>
-			</div>
-		</ons-toolbar>
-		
-		<form method="post" action="login.php">
+	#textclr{
+		color: white;
+	}
 
-    <div class="col-md-4">
+</style>
 
-    </div>
-    <div class="col-md-4" style="padding-top: 50px; padding-bottom: 70px; padding-left: 70px; padding-right: 70px; font-family: 'Raleway';">
-      <h1>Log In</h1>
-      <br>
-       <p style="float:left;">Email : </p>
-       <p> 
-        <input type="text" name="email" class="textInput form-control" required>
-      </p>
-    </p>
-    <p>
-     <p style="float:left;">Password : </p>
-     <p><input type="password" name="password" class="textInput form-control" required></p>
-   </p>
-   <p>
-     <br>
-     <p><input type="submit" name="login_btn" class="btn btn-success"></p>
-   </p>
-   <p>
+<ons-toolbar>
+	<div class="left">
+		<ons-toolbar-button>
+			<ons-icon icon="md-menu"></ons-icon>
+		</ons-toolbar-button>
+	</div>
+	<div class="center">In the Moment - Login</div>
+	<div class="right">
+		<ons-toolbar-button>Button</ons-toolbar-button>
+	</div>
+</ons-toolbar>
 
-     <p><input style="float:left; display: inline-block;" type="button" value="Register" name="register_btn" class="btn btn-info" onclick="location.href='register.php'">
-      <br>
-      <br>
-      <small class="text-muted">Don't have an account?</small>
-    </p>
-	<?php
-		// Facebook API
-	require_once( 'vendor/autoload.php' );
-	// Initialize the Facebook PHP SDK v5.
-	$fb = new Facebook\Facebook([
-	  'app_id'                => '736882723323708',
-	  'app_secret'            => '67e1b3111e10c972cab13cc1564c95fb',
-	  'default_graph_version' => 'v2.10',
-	]);
+<form method="post" action="login.php">
 
-	$helper = $fb->getRedirectLoginHelper();
+	<div class="col-md-4">
 
-	$permissions = ['email']; // Optional permissions
-	$loginUrl = $helper->getLoginUrl('http://localhost/In%20the%20Moment/fb-callback.php', $permissions);
+	</div>
+	<div class="col-md-4" style="text-align: center; margin-top: 20%;">
+		<h1 id="textclr">Log In</h1>
+		<br>
+	    <p>
+	    	<ons-input class="textInput form-control" id="name" modifier="underbar" placeholder="Username" float type="text" required></ons-input>
+	    </p>
 
-	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-	?>
-  </p>
+	    <p>
+	    	<ons-input id="name" modifier="underbar" placeholder="Password" float type="text" required class="textInput form-control"></ons-input>
+	    </p>
+
+
+    <section style="padding: 8px;">
+    	<ons-button modifier="quiet">
+    		<input type="submit" name="login_btn"  style="color: white;">
+    	</ons-button>
+    	<br>
+    	<br>
+    	<small class="text-muted">Don't have an account?</small>
+    	<br>
+    	<br>
+    	<ons-button>
+    		<input style="display: inline-block; color: white;" type="button" value="Register" name="register_btn" onclick="location.href='register.php'">
+    	</ons-button>
+    	<br>
+    	<br>
+    </section>
+    	
+
+ <!--    	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div> -->
+    	
+    	<p>
+    		<?php
+				// Facebook API
+		    		require_once( 'vendor/autoload.php' );
+			// Initialize the Facebook PHP SDK v5.
+		    		$fb = new Facebook\Facebook([
+		    			'app_id'                => '736882723323708',
+		    			'app_secret'            => '67e1b3111e10c972cab13cc1564c95fb',
+		    			'default_graph_version' => 'v2.10',
+		    		]);
+
+		    		$helper = $fb->getRedirectLoginHelper();
+
+			$permissions = ['email']; // Optional permissions
+			$loginUrl = $helper->getLoginUrl('http://localhost/In%20the%20Moment/fb-callback.php', $permissions);
+
+			echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+			?>
+		</p>
+
 </div>
 </div>
 
 </form>
 
-<!--
-		<p class="intro">
-			This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
-		</p>
-
-		<ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
-			<div class="title">Pull Hook</div>
-			<div class="content">Simple "pull to refresh" functionality to update data.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'dialogs.html', 'title': 'Dialogs'})">
-			<div class="title">Dialogs</div>
-			<div class="content">Components and utility methods to display many types of dialogs.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'buttons.html', 'title': 'Buttons'})">
-			<div class="title">Buttons</div>
-			<div class="content">Different styles for buttons, floating action buttons and speed dials.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'carousel.html', 'title': 'Carousel'})">
-			<div class="title">Carousel</div>
-			<div class="content">Customizable carousel that can be optionally fullscreen.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'infiniteScroll.html', 'title': 'Infinite Scroll'})">
-			<div class="title">Infinite Scroll</div>
-			<div class="content">Two types of infinite lists: "Load More" and "Lazy Repeat".</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
-			<div class="title">Progress</div>
-			<div class="content">Linear progress, circular progress and spinners.</div>
-		</ons-card>
-
-		<style>
-		.intro {
-			text-align: center;
-			padding: 0 20px;
-			margin-top: 40px;
-		}
-
-		ons-card {
-			cursor: pointer;
-			color: #333;
-		}
-
-		.card__title,
-		.card--material__title {
-			font-size: 20px;
-		}
-	</style>
-
-
-	<ons-bottom-toolbar>
-		<ons-tabbar swipeable position="auto">
-			<ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
-			</ons-tab>
-			<ons-tab page="tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">
-			</ons-tab>
-			<ons-tab page="tab3.html" label="Tab 3" icon="md-settings" active-icon="md-face">
-			</ons-tab>
-			<ons-tab page="tab2.html" label="Tab 4" icon="md-settings" active-icon="md-face">
-			</ons-tab>
-		</ons-tabbar>
-	</ons-bottom-toolbar>
-
-
 </ons-page>
-	-->
+
 
 </body>
 
