@@ -1,15 +1,14 @@
 <?php
-// Pass session data over. Only needed if not already passed by another script like WordPress.
+
 session_start();
 
-// Include the required dependencies.
 require_once( 'vendor/autoload.php' );
 
 $fb = new Facebook\Facebook([
-  'app_id' => '{app-id}',
-  'app_secret' => '{app-secret}',
-  'default_graph_version' => 'v2.10',
-]);
+  'app_id' => '736882723323708', // Replace {app-id} with your app id
+  'app_secret' => '67e1b3111e10c972cab13cc1564c95fb',
+  'default_graph_version' => 'v2.2',
+  ]);
 
 $helper = $fb->getRedirectLoginHelper();
 
@@ -52,7 +51,7 @@ echo '<h3>Metadata</h3>';
 var_dump($tokenMetadata);
 
 // Validation (these will throw FacebookSDKException's when they fail)
-$tokenMetadata->validateAppId($config['app_id']);
+$tokenMetadata->validateAppId('736882723323708'); // Replace {app-id} with your app id
 // If you know the user ID this access token belongs to, you can validate it here
 //$tokenMetadata->validateUserId('123');
 $tokenMetadata->validateExpiration();
@@ -74,4 +73,5 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
-//header('Location: https://example.com/members.php');
+header('Location: https://s4436053-inthemoment.uqcloud.net/');
+?>

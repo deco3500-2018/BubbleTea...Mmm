@@ -164,7 +164,8 @@ if(isset($_POST['register_btn']))
 		    		$helper = $fb->getRedirectLoginHelper();
 
 			$permissions = ['email']; // Optional permissions
-			$loginUrl = $helper->getLoginUrl('http://localhost/In%20the%20Moment/fb-callback.php', $permissions);
+			$loginUrl = $helper->getLoginUrl('https://s4436053-inthemoment.uqcloud.net/fb-callback.php', $permissions);
+
 
 			echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 			?>
