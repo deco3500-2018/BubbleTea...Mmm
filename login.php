@@ -163,7 +163,7 @@ if(isset($_POST['register_btn']))
 
 		    		$helper = $fb->getRedirectLoginHelper();
 
-			$permissions = ['email']; // Optional permissions
+			$permissions = ['public_profile','email','user_location','user_likes']; // Optional permissions
 			$loginUrl = $helper->getLoginUrl('https://s4436053-inthemoment.uqcloud.net/fb-callback.php', $permissions);
 
 

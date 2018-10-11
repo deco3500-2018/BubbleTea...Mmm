@@ -1,5 +1,26 @@
 <?php
 include "start.php";
+include "error.php";
+require_once( 'vendor/autoload.php' );
+
+$fb = new Facebook\Facebook([
+  'app_id' => '736882723323708', // Replace {app-id} with your app id
+  'app_secret' => '67e1b3111e10c972cab13cc1564c95fb',
+  'default_graph_version' => 'v2.2',
+  ]);
+
+try {
+  // Returns a `Facebook\FacebookResponse` object
+  $response = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+$user = $response->getGraphUser();
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +52,15 @@ include "start.php";
 		</ons-toolbar>
 
 		<p class="intro">
-			This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
+			This is a kitchen sink example that shows off the components of Onsen UI.
+			
+			<?php
+			
+
+
+ echo 'Name: ' . $user['name']; 
+			?>
+
 		</p>
 
 		<ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
