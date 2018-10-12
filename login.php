@@ -76,92 +76,80 @@ if(isset($_POST['register_btn']))
 
 <body>
 
-<!-- <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script> -->
+	<ons-page id="login-bg">
 
-<ons-page id="login-bg">
+		<style type="text/css">
+		#login-bg .page__background {
+			background-image: url('img/grad.png');
+			object-fit: cover;
+			background-repeat: no-repeat;
+		}
 
-	<style type="text/css">
-	#login-bg .page__background {
-		background-image: url('img/login2.jpeg');
-		height: auto;
-		width: 100%;
-		object-fit: cover;
-		background-repeat: no-repeat;
-	}
+		#textclr{
+			color: white;
+		}
 
-	#textclr{
-		color: white;
-	}
+	</style>
 
-</style>
+	<!-- Navbar -->
+	<ons-toolbar class="toolbar toolbar--transparent">
+		<div class="toolbar__right">
+			<span class="toolbar-button">
+				<i class="ion-navicon" style="font-size:32px; vertical-align:-6px; margin-right: 10px;" id="textclr"></i>
+			</span>
+		</div>
 
-<ons-toolbar>
-	<div class="left">
-		<ons-toolbar-button>
-			<ons-icon icon="md-menu"></ons-icon>
-		</ons-toolbar-button>
-	</div>
-	<div class="center">In the Moment - Login</div>
-	<div class="right">
-		<ons-toolbar-button>Button</ons-toolbar-button>
-	</div>
-</ons-toolbar>
+		<div class="toolbar__center" id="textclr" style="text-transform: bold;">
+			LOG IN
+		</div>
 
-<form method="post" action="login.php">
+		<!-- <div class="toolbar__right">
+			<span class="toolbar-button" id="textclr">Label</span>
+		</div> -->
+	</ons-toolbar>
 
-	<div class="col-md-4">
+	<!-- Login Section --> 
+	<form method="post" action="login.php">
+		<div style="text-align: center;">
+			<h1 id="textclr" style="text-align: center; margin-top: 10%;">Log In</h1>
+			<br>
+			<p>
+				<ons-input input-id="textclr" class="textInput form-control" id="name" modifier="underbar" placeholder="Username" float type="text" required></ons-input>
+			</p>
 
-	</div>
-	<div class="col-md-4" style="text-align: center; margin-top: 20%;">
-		<h1 id="textclr">Log In</h1>
-		<br>
-	    <p>
-	    	<ons-input class="textInput form-control" id="name" modifier="underbar" placeholder="Username" float type="text" required></ons-input>
-	    </p>
-
-	    <p>
-	    	<ons-input id="name" modifier="underbar" placeholder="Password" float type="text" required class="textInput form-control"></ons-input>
-	    </p>
+			<p>
+				<ons-input input-id="textclr" id="password" modifier="underbar" placeholder="Password" float type="text" required class="textInput form-control"></ons-input>
+			</p>
 
 
-    <section style="padding: 8px;">
-    	<ons-button modifier="quiet">
-    		<input type="submit" name="login_btn"  style="color: white;">
-    	</ons-button>
-    	<br>
-    	<br>
-    	<small class="text-muted">Don't have an account?</small>
-    	<br>
-    	<br>
-    	<ons-button>
-    		<input style="display: inline-block; color: white;" type="button" value="Register" name="register_btn" onclick="location.href='register.php'">
-    	</ons-button>
-    	<br>
-    	<br>
-    </section>
-    	
+			<section style="padding: 8px;">
+				<ons-button class="button button--cta">
+					<ons-input input-id="textclr" type="submit" name="login_btn" value="Login">
+					</ons-button>
+					<br><br>
+					<small class="text-muted">Don't have an account?</small>
+					<br><br>
+					<ons-button class="button button--cta">
+						<ons-input input-id="textclr" style="display: inline-block; color: white;" type="button" value="Register" name="register_btn" onclick="location.href='register.php'">
+						</ons-button>
+						<br>
+						<br>
+					</section>
 
- <!--    	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div> -->
-    	
-    	<p>
-    		<?php
-				// Facebook API
-		    		require_once( 'vendor/autoload.php' );
-			// Initialize the Facebook PHP SDK v5.
-		    		$fb = new Facebook\Facebook([
-		    			'app_id'                => '736882723323708',
-		    			'app_secret'            => '67e1b3111e10c972cab13cc1564c95fb',
-		    			'default_graph_version' => 'v2.10',
-		    		]);
 
-		    		$helper = $fb->getRedirectLoginHelper();
+					<p>OR<br><br>
+
+						<?php
+						// Facebook API
+						require_once( 'vendor/autoload.php' );
+						// Initialize the Facebook PHP SDK v5.
+						$fb = new Facebook\Facebook([
+							'app_id'                => '736882723323708',
+							'app_secret'            => '67e1b3111e10c972cab13cc1564c95fb',
+							'default_graph_version' => 'v2.10',
+						]);
+
+						$helper = $fb->getRedirectLoginHelper();
 
 			$permissions = ['public_profile','email','user_location','user_likes']; // Optional permissions
 			$loginUrl = $helper->getLoginUrl('https://s4436053-inthemoment.uqcloud.net/fb-callback.php', $permissions);
@@ -171,7 +159,7 @@ if(isset($_POST['register_btn']))
 			?>
 		</p>
 
-</div>
+	</div>
 </div>
 
 </form>
