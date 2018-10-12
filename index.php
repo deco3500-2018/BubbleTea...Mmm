@@ -7,22 +7,24 @@ $fb = new Facebook\Facebook([
   'app_id' => '736882723323708', // Replace {app-id} with your app id
   'app_secret' => '67e1b3111e10c972cab13cc1564c95fb',
   'default_graph_version' => 'v2.2',
-  ]);
+]);
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
+	$response = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
-  echo 'Graph returned an error: ' . $e->getMessage();
-  exit;
+	echo 'Graph returned an error: ' . $e->getMessage();
+	exit;
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
-  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
+	echo 'Facebook SDK returned an error: ' . $e->getMessage();
+	exit;
 }
 
 $user = $response->getGraphUser();
 
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -32,61 +34,120 @@ $user = $response->getGraphUser();
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 </head>
 
 <body>
 
-	<ons-page>
+	<ons-page id="bg">
 
-		<ons-toolbar>
-			<div class="left">
-				<ons-toolbar-button icon="md-account-circle"></ons-toolbar-button>
+		<style type="text/css">
+			#bg .page__background {
+				background-color: white;
+			}
+
+			#textclr{
+				color: white;
+			}
+		</style>
+
+		<!-- Navbar -->
+		<ons-toolbar class="toolbar toolbar--transparent">
+			<div class="toolbar__right">
+				<span class="toolbar-button">
+					<i class="ion-navicon" style="font-size:32px; vertical-align:-6px; margin-right: 10px;"></i>
+				</span>
 			</div>
 
-			<div class="center">Title</div>
+			<div class="toolbar__center" id="textclr" style="text-transform: bold;">
+				HOME
+			</div>
 
-			<div class="right">
-				<ons-toolbar-button>-</ons-toolbar-button>
-				<ons-toolbar-button>+</ons-toolbar-button>
+			<div class="toolbar__left">
+				<!-- <span class="toolbar-button" id="textclr">Label</span> -->
+				<ons-toolbar-button icon="md-face" style="margin-left: 10px;"></ons-toolbar-button>
 			</div>
 		</ons-toolbar>
 
 		<p class="intro">
-			This is a kitchen sink example that shows off the components of Onsen UI.
-			
+			Welcome back
+
 			<?php
-			
 
-
- echo 'Name: ' . $user['name']; 
+			echo 'Name: ' . $user['name']; 
 			?>
-
 		</p>
 
-		<ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
-			<div class="title">Pull Hook</div>
-			<div class="content">Simple "pull to refresh" functionality to update data.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'dialogs.html', 'title': 'Dialogs'})">
-			<div class="title">Dialogs</div>
-			<div class="content">Components and utility methods to display many types of dialogs.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'buttons.html', 'title': 'Buttons'})">
-			<div class="title">Buttons</div>
-			<div class="content">Different styles for buttons, floating action buttons and speed dials.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'carousel.html', 'title': 'Carousel'})">
-			<div class="title">Carousel</div>
-			<div class="content">Customizable carousel that can be optionally fullscreen.</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'infiniteScroll.html', 'title': 'Infinite Scroll'})">
-			<div class="title">Infinite Scroll</div>
-			<div class="content">Two types of infinite lists: "Load More" and "Lazy Repeat".</div>
-		</ons-card>
-		<ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
-			<div class="title">Progress</div>
-			<div class="content">Linear progress, circular progress and spinners.</div>
-		</ons-card>
+		<div class="camera-view" style="background-image: url('img/grad.png');">
+			<ons-icon class="camera-icon" icon="md-face" id="textclr"></ons-icon>
+		</div>
+
+		<style type="text/css">
+			.camera-view {
+				width: 100%;
+				height: 30%;
+				text-align: center;
+				background-color: #cacaca;
+				display: table;
+			}
+
+			.camera-icon {
+				vertical-align: middle !important;
+				font-size: 100px;
+				opacity: 1;
+				display: table-cell;
+			}
+
+			.camera-button {
+				width: 100%;
+				height: 40%;
+				text-align: center;
+				display: table;
+			}
+		</style>
+
+
+		<!-- Graph section --> 
+		<section>
+			<canvas id="myChart" width="80" height="50"></canvas>
+			<script>
+				var ctx = document.getElementById("myChart").getContext('2d');
+				var myChart = new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+						datasets: [{
+							label: 'Free Time (# of Hours)',
+							data: [12, 9, 3, 5, 2, 3, 4, 7, 3, 5],
+							backgroundColor: [
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							'rgba(54, 162, 235, 0.8)',
+							],
+							borderColor: [
+							'rgba(54, 162, 235, 0.8)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true
+								}
+							}]
+						}
+					}
+				});
+			</script>
+		</section>
 
 		<style>
 		.intro {
@@ -104,22 +165,48 @@ $user = $response->getGraphUser();
 		.card--material__title {
 			font-size: 20px;
 		}
-	</style>
 
+		#white{
+			color: white;
+		}
+		</style>
 
-	<ons-bottom-toolbar>
-		<ons-tabbar swipeable position="auto">
-			<ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
-			</ons-tab>
-			<ons-tab page="tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">
-			</ons-tab>
-			<ons-tab page="tab3.html" label="Tab 3" icon="md-settings" active-icon="md-face">
-			</ons-tab>
-			<ons-tab page="tab2.html" label="Tab 4" icon="md-settings" active-icon="md-face">
-			</ons-tab>
-		</ons-tabbar>
-	</ons-bottom-toolbar>
+		<ons-bottom-toolbar>
+			<div class="tabbar">
+				<label class="tabbar__item">
+					<input type="radio" name="tabbar-a" checked="checked">
+					<button class="tabbar__button">
+						<i class="tabbar__icon ion-stop"></i>
+						<div class="tabbar__label">Home</div>
+					</button>
+				</label>
 
+				<label class="tabbar__item">
+					<input type="radio" name="tabbar-a">
+					<button class="tabbar__button">
+						<i class="tabbar__icon ion-record"></i>
+						<div class="tabbar__label">Explore</div>
+					</button>
+				</label>
+
+				<label class="tabbar__item">
+					<input type="radio" name="tabbar-a">
+					<button class="tabbar__button">
+						<i class="tabbar__icon ion-star"></i>
+						<div class="tabbar__label">Three</div>
+					</button>
+				</label>
+
+				<label class="tabbar__item">
+					<input type="radio" name="tabbar-a" checked="checked">
+					<button class="tabbar__button">
+						<i class="tabbar__icon ion-stop"></i>
+						<div class="tabbar__label">Four</div>
+					</button>
+				</label>
+
+			</div>
+		</ons-bottom-toolbar>
 
 </ons-page>
 
