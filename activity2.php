@@ -17,7 +17,6 @@ include "start.php";
 
 <body>
 
-
 	<ons-page id="bg">
 		<div class="background" style="background-image: url('img/grad.png');"></div>
 
@@ -36,8 +35,6 @@ include "start.php";
 		}
 
 	</style>
-
-
 
 
 	<!-- Navbar -->
@@ -61,7 +58,7 @@ include "start.php";
 		<ons-card>
 			<img src="img/card.jpg" alt="Onsen UI" style="width: 100%">
 			<div class="title" style="text-align: center;">
-				Make a dessert in under 20 minutes!
+				15 minute pilates sessions
 			</div>
 			<br>
 			<div class="content">
@@ -78,13 +75,6 @@ include "start.php";
 					</ons-col>
 				</ons-row>
 
-<!-- 			<ons-list>
-				<ons-list-header>Select option to start</ons-list-header>
-				<ons-list-item>Link 1: Youtube - Custard tart</ons-list-item>
-				<ons-list-item>Link 2: Blog - Matcha Pudding</ons-list-item>
-				<ons-list-item>Link 3: Instagram - Berry cupcake</ons-list-item>
-			</ons-list> -->
-
 			<ons-list>
 			<ons-list-header>Select option to start</ons-list-header>
 				<ons-list-item>
@@ -92,7 +82,7 @@ include "start.php";
 						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
 					</div>
 					<div class="center">
-						<span class="list-item__title">Youtube - Custard tart</span><span class="list-item__subtitle">On the Internet</span>
+						<span class="list-item__title">Youtube - Beginner's pilates</span><span class="list-item__subtitle">On the Internet</span>
 					</div>
 				</ons-list-item>
 
@@ -101,7 +91,7 @@ include "start.php";
 						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
 					</div>
 					<div class="center">
-						<span class="list-item__title">Blog - Matcha Pudding</span><span class="list-item__subtitle">On the Internet</span>
+						<span class="list-item__title">Youtube - 15 minute workout</span><span class="list-item__subtitle">On the Internet</span>
 					</div>
 				</ons-list-item>
 
@@ -110,14 +100,14 @@ include "start.php";
 						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
 					</div>
 					<div class="center">
-						<span class="list-item__title">Instagram - Berry cupcake</span><span class="list-item__subtitle">On the Internet</span>
+						<span class="list-item__title">Video - Introduction to pilates</span><span class="list-item__subtitle">On the Internet</span>
 					</div>
 				</ons-list-item>
 			</ons-list>
 
 		</div>
 
-		<ons-button modifier="large--quiet" style="display: inline-block;" onclick="location.href='activity2.php'">Maybe Later</ons-button>
+		<ons-button modifier="large--quiet" style="display: inline-block;" onclick="location.href='activityRec.php'">Maybe Later</ons-button>
 	</ons-card>
 
 	<style type="text/css">
