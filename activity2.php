@@ -18,13 +18,9 @@ include "start.php";
 <body>
 
 	<ons-page id="bg">
-		<div class="background" style="background-image: url('img/grad.png');"></div>
+		<div class="background"></div>
 
 		<style type="text/css">
-
-		#bg .page__background {
-			background-color: white;
-		}
 
 		#textclr{
 			color: white;
@@ -32,6 +28,12 @@ include "start.php";
 
 		#white{
 			color: white;
+		}
+
+		#bg .page__background{
+			background: #22c1c3;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		}
 
 	</style>
@@ -129,23 +131,23 @@ include "start.php";
 
 <ons-bottom-toolbar>
 	<div class="tabbar">
-		<label class="tabbar__item">
-			<input type="radio" name="tabbar-a" checked="checked">
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-stop"></i>
 				<div class="tabbar__label">Home</div>
 			</button>
 		</label>
 
-		<label class="tabbar__item">
-			<input type="radio" name="tabbar-a">
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a" checked="checked">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-record"></i>
 				<div class="tabbar__label">Explore</div>
 			</button>
 		</label>
 
-		<label class="tabbar__item">
+		<label class="tabbar__item" onclick="location.href='index.php'">
 			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-star"></i>
@@ -153,7 +155,7 @@ include "start.php";
 			</button>
 		</label>
 
-		<label class="tabbar__item">
+		<label class="tabbar__item" onclick="location.href='index.php'">
 			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-stop"></i>

@@ -19,13 +19,9 @@ include "start.php";
 
 
 	<ons-page id="bg">
-		<div class="background" style="background-image: url('img/grad.png');"></div>
+		<div class="background"></div>
 
 		<style type="text/css">
-
-		#bg .page__background {
-			background-color: white;
-		}
 
 		#textclr{
 			color: white;
@@ -33,6 +29,12 @@ include "start.php";
 
 		#white{
 			color: white;
+		}
+
+		#bg .page__background{
+			background: #22c1c3;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		}
 
 	</style>
@@ -58,25 +60,25 @@ include "start.php";
 	</ons-toolbar>
 
 
-		<ons-card>
-			<img src="img/card.jpg" alt="Onsen UI" style="width: 100%">
-			<div class="title" style="text-align: center;">
-				Make a dessert in under 20 minutes!
-			</div>
-			<br>
-			<div class="content">
+	<ons-card>
+		<img src="img/card.jpg" alt="Onsen UI" style="width: 100%">
+		<div class="title" style="text-align: center;">
+			Make a dessert in under 20 minutes!
+		</div>
+		<br>
+		<div class="content">
 
-				<ons-row style="margin-bottom: 15px;">
-					<ons-col width="40px" style="text-align: center; line-height: 31px;">
-						<ons-icon icon="md-thumb-down"></ons-icon>
-					</ons-col>
-					<ons-col>
-						<ons-range style="width: 100%;" value="75"></ons-range>
-					</ons-col>
-					<ons-col width="40px" style="text-align: center; line-height: 31px;">
-						<ons-icon icon="md-thumb-up"></ons-icon>
-					</ons-col>
-				</ons-row>
+			<ons-row style="margin-bottom: 15px;">
+				<ons-col width="40px" style="text-align: center; line-height: 31px;">
+					<ons-icon icon="md-thumb-down"></ons-icon>
+				</ons-col>
+				<ons-col>
+					<ons-range style="width: 100%;" value="75"></ons-range>
+				</ons-col>
+				<ons-col width="40px" style="text-align: center; line-height: 31px;">
+					<ons-icon icon="md-thumb-up"></ons-icon>
+				</ons-col>
+			</ons-row>
 
 <!-- 			<ons-list>
 				<ons-list-header>Select option to start</ons-list-header>
@@ -86,7 +88,7 @@ include "start.php";
 			</ons-list> -->
 
 			<ons-list>
-			<ons-list-header>Select option to start</ons-list-header>
+				<ons-list-header>Select option to start</ons-list-header>
 				<ons-list-item>
 					<div class="left">
 						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
@@ -135,27 +137,27 @@ include "start.php";
 		display: table-cell;
 	}
 
-	</style>
+</style>
 
 <ons-bottom-toolbar>
 	<div class="tabbar">
-		<label class="tabbar__item">
-			<input type="radio" name="tabbar-a" checked="checked">
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-stop"></i>
 				<div class="tabbar__label">Home</div>
 			</button>
 		</label>
 
-		<label class="tabbar__item">
-			<input type="radio" name="tabbar-a">
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a" checked="checked">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-record"></i>
 				<div class="tabbar__label">Explore</div>
 			</button>
 		</label>
 
-		<label class="tabbar__item">
+		<label class="tabbar__item" onclick="location.href='index.php'">
 			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-star"></i>
@@ -163,7 +165,7 @@ include "start.php";
 			</button>
 		</label>
 
-		<label class="tabbar__item">
+		<label class="tabbar__item" onclick="location.href='index.php'">
 			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-stop"></i>

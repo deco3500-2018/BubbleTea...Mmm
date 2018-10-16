@@ -49,6 +49,12 @@ $user = $response->getGraphUser();
 			#textclr{
 				color: white;
 			}
+
+			#header {
+			background: #22c1c3;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			}
 		</style>
 
 		<!-- Navbar -->
@@ -78,7 +84,7 @@ $user = $response->getGraphUser();
 			?>
 		</p>
 
-		<div class="camera-view" style="background-image: url('img/grad.png');">
+		<div class="camera-view" id="header">
 			<ons-icon class="camera-icon" icon="md-face" id="textclr"></ons-icon>
 		</div>
 
@@ -149,7 +155,7 @@ $user = $response->getGraphUser();
 			</script>
 		</section>
 
-		<style>
+		<!-- <style>
 		.intro {
 			text-align: center;
 			padding: 0 20px;
@@ -169,44 +175,44 @@ $user = $response->getGraphUser();
 		#white{
 			color: white;
 		}
-		</style>
+		</style> -->
 
 		<ons-bottom-toolbar>
-			<div class="tabbar">
-				<label class="tabbar__item">
-					<input type="radio" name="tabbar-a" checked="checked">
-					<button class="tabbar__button">
-						<i class="tabbar__icon ion-stop"></i>
-						<div class="tabbar__label">Home</div>
-					</button>
-				</label>
+	<div class="tabbar">
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a">
+			<button class="tabbar__button">
+				<i class="tabbar__icon ion-stop"></i>
+				<div class="tabbar__label">Home</div>
+			</button>
+		</label>
 
-				<label class="tabbar__item">
-					<input type="radio" name="tabbar-a">
-					<button class="tabbar__button">
-						<i class="tabbar__icon ion-record"></i>
-						<div class="tabbar__label">Explore</div>
-					</button>
-				</label>
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a" checked="checked">
+			<button class="tabbar__button">
+				<i class="tabbar__icon ion-record"></i>
+				<div class="tabbar__label">Explore</div>
+			</button>
+		</label>
 
-				<label class="tabbar__item">
-					<input type="radio" name="tabbar-a">
-					<button class="tabbar__button">
-						<i class="tabbar__icon ion-star"></i>
-						<div class="tabbar__label">Three</div>
-					</button>
-				</label>
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a">
+			<button class="tabbar__button">
+				<i class="tabbar__icon ion-star"></i>
+				<div class="tabbar__label">Three</div>
+			</button>
+		</label>
 
-				<label class="tabbar__item">
-					<input type="radio" name="tabbar-a" checked="checked">
-					<button class="tabbar__button">
-						<i class="tabbar__icon ion-stop"></i>
-						<div class="tabbar__label">Four</div>
-					</button>
-				</label>
+		<label class="tabbar__item" onclick="location.href='index.php'">
+			<input type="radio" name="tabbar-a">
+			<button class="tabbar__button">
+				<i class="tabbar__icon ion-stop"></i>
+				<div class="tabbar__label">Four</div>
+			</button>
+		</label>
 
-			</div>
-		</ons-bottom-toolbar>
+	</div>
+</ons-bottom-toolbar>
 
 </ons-page>
 
