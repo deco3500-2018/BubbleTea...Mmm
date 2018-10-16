@@ -9,18 +9,25 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.2',
 ]);
 
-try {
-  // Returns a `Facebook\FacebookResponse` object
-	$response = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
-	echo 'Graph returned an error: ' . $e->getMessage();
-	exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-	echo 'Facebook SDK returned an error: ' . $e->getMessage();
-	exit;
-}
+if(isset($_SESSION['correctPassword'])&&$_SESSION['correctPassword']==true){
+	$name = 'John Does';
+} else if (!isset($_SESSION['fb_access_token'])){
+	header("Location:login.php");
+}else{
+	try {
+	  // Returns a `Facebook\FacebookResponse` object
+		$response = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
+	} catch(Facebook\Exceptions\FacebookResponseException $e) {
+		echo 'Graph returned an error: ' . $e->getMessage();
+		exit;
+	} catch(Facebook\Exceptions\FacebookSDKException $e) {
+		echo 'Facebook SDK returned an error: ' . $e->getMessage();
+		exit;
+	}
 
-$user = $response->getGraphUser();
+	$user = $response->getGraphUser();
+	$name = $user['name'];
+}
 
 ?>
 
@@ -80,7 +87,7 @@ $user = $response->getGraphUser();
 
 			<?php
 
-			echo 'Name: ' . $user['name']; 
+			echo 'Name: ' . $name; 
 			?>
 		</p>
 
