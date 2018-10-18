@@ -22,24 +22,16 @@ include "start.php";
 
 		<!-- Navbar -->
 		<ons-toolbar class="toolbar toolbar--transparent">
-			<!-- <div class="toolbar__right">
-				<span class="toolbar-button">
-					<i class="ion-navicon" style="font-size:32px; vertical-align:-6px; margin-right: 10px; color: white;"></i>
-				</span>
-			</div> -->
 
 			<div class="toolbar__center" id="textclr" style="text-transform: bold;">
 				Choose a persona that best describes you!
 			</div>
 
-			<!-- <div class="toolbar__left">
-				<ons-toolbar-button icon="md-face" style="margin-left: 10px; color: white;"></ons-toolbar-button>
-			</div> -->
 		</ons-toolbar>
 
 		<ons-carousel class="carousel" auto-scroll id="carousel" auto-refresh swipeable overscrollable>
 			<ons-carousel-item>
-					<ons-card>
+					<ons-card id="persona1">
 						<div class="title">
 							Persona 1: Mary
 						</div>
@@ -61,7 +53,7 @@ include "start.php";
 				</ons-carousel-item>
 
 				<ons-carousel-item>
-					<ons-card>
+					<ons-card id="persona2">
 						<div class="title">
 							Persona 2: John
 						</div>
@@ -83,7 +75,7 @@ include "start.php";
 				</ons-carousel-item>
 
 				<ons-carousel-item>
-					<ons-card>
+					<ons-card id="persona3">
 						<div class="title">
 							Persona 3: Jimmy 
 						</div>
@@ -106,7 +98,7 @@ include "start.php";
 				</ons-carousel-item>
 
 				<ons-carousel-item>
-					<ons-card>
+					<ons-card id="persona4">
 						<div class="title">
 							Persona 4: Jessica
 						</div>
@@ -155,15 +147,6 @@ include "start.php";
 							<div class="tabbar__label">Three</div>
 						</button>
 					</label>
-
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-stop"></i>
-							<div class="tabbar__label">Four</div>
-						</button>
-					</label>
-
 				</div>
 			</ons-bottom-toolbar>
 
