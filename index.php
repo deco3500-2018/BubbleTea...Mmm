@@ -1,33 +1,19 @@
 <?php
 include "start.php";
 include "error.php";
-require_once( 'vendor/autoload.php' );
 
-$fb = new Facebook\Facebook([
-  'app_id' => '736882723323708', // Replace {app-id} with your app id
-  'app_secret' => '67e1b3111e10c972cab13cc1564c95fb',
-  'default_graph_version' => 'v2.2',
-]);
-
-if(isset($_SESSION['correctPassword'])&&$_SESSION['correctPassword']==true){
-	$name = 'John Does';
-} else if (!isset($_SESSION['fb_access_token'])){
-	header("Location:login.php");
-}else{
-	try {
-	  // Returns a `Facebook\FacebookResponse` object
-		$response = $fb->get('/me?fields=id,name', $_SESSION['fb_access_token']);
-	} catch(Facebook\Exceptions\FacebookResponseException $e) {
-		echo 'Graph returned an error: ' . $e->getMessage();
-		exit;
-	} catch(Facebook\Exceptions\FacebookSDKException $e) {
-		echo 'Facebook SDK returned an error: ' . $e->getMessage();
-		exit;
+if(isset($_SESSION['user'])&&isset($_SESSION['username'])){
+	$name = $_SESSION['username'];
+	if(!empty($_POST['interest'])) {
+    foreach($_POST['interest'] as $interest) {
+            echo $check; //echoes the value set in the HTML form for each checked checkbox.
+                         //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
+                         //in your case, it would echo whatever $row['Report ID'] is equivalent to.
+		}
 	}
-
-	$user = $response->getGraphUser();
-	$name = $user['name'];
-}
+} else{
+	header("Location:login.php");
+}	
 
 ?>
 
