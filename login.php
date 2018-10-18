@@ -44,7 +44,7 @@ if(isset($_POST['login_btn']))
      //   $_SESSION['loggedin']=true;
        // $_SESSION["userID"] = $resultID;
 
-		header("location:index.php");
+		header("location:personas.php");
 
 
         //echo $_SESSION["userID"];
