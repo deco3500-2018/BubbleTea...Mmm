@@ -30,7 +30,9 @@ include "start.php";
 		</ons-toolbar>
 
 		<ons-carousel class="carousel" auto-scroll id="carousel" auto-refresh swipeable overscrollable>
+			<!-- Card 1 --> 
 			<ons-carousel-item>
+				<form method="post" action="interestSelection.php">
 					<ons-card id="persona1">
 						<div class="title">
 							Persona 1: Mary
@@ -44,6 +46,33 @@ include "start.php";
 								<ons-list-item modifier="nodivider">Keeping on top of trends is a must</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+								
+								<ons-button modifier="button large--cta">
+									<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+								</ons-button>
+
+							</section>
+						</div>
+					</ons-card>
+				</form>
+			</ons-carousel-item>
+
+
+			<!-- Card 2 -->
+			<ons-carousel-item>
+				<ons-card id="persona2">
+					<div class="title">
+						Persona 2: John
+					</div>
+					<br>
+					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+					<div class="content">
+						<ons-list>
+							<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Athletic</ons-list-header>
+							<ons-list-item modifier="nodivider">Enjoys outdoor activities</ons-list-item>
+							<ons-list-item modifier="nodivider">A sporty individual who prefers to keep on the move</ons-list-item>
+						</ons-list>
+						<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 							<ons-button modifier="button large--cta">
 								<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
 								</ons-button>
@@ -52,28 +81,8 @@ include "start.php";
 					</ons-card>
 				</ons-carousel-item>
 
-				<ons-carousel-item>
-					<ons-card id="persona2">
-						<div class="title">
-							Persona 2: John
-						</div>
-						<br>
-						<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
-						<div class="content">
-							<ons-list>
-								<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Athletic</ons-list-header>
-								<ons-list-item modifier="nodivider">Enjoys outdoor activities</ons-list-item>
-								<ons-list-item modifier="nodivider">A sporty individual who prefers to keep on the move</ons-list-item>
-							</ons-list>
-							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
-							<ons-button modifier="button large--cta">
-								<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
-								</ons-button>
-							</section>
-						</div>
-					</ons-card>
-				</ons-carousel-item>
 
+				<!-- Card 3 -->
 				<ons-carousel-item>
 					<ons-card id="persona3">
 						<div class="title">
@@ -89,70 +98,72 @@ include "start.php";
 								<ons-list-item modifier="nodivider">Interested in anything and everything artistic</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
-							<ons-button modifier="button large--cta">
-								<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
-								</ons-button>
-							</section>
+								<ons-button modifier="button large--cta">
+									<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
+									</ons-button>
+								</section>
+							</div>
+						</ons-card>
+					</ons-carousel-item>
+
+
+					<!-- Card 4 -->
+					<ons-carousel-item>
+						<ons-card id="persona4">
+							<div class="title">
+								Persona 4: Jessica
+							</div>
+							<br>
+							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+							<div class="content">
+								<ons-list>
+									<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Coffee Lover</ons-list-header>
+									<ons-list-item modifier="nodivider">Loves checking out new coffeeshops</ons-list-item>
+									<ons-list-item modifier="nodivider">Coffee is always a thing</ons-list-item>
+								</ons-list>
+								<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+									<ons-button modifier="button large--cta">
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
+										</ons-button>
+									</section>
+								</div>
+							</ons-card>
+						</ons-carousel-item>
+
+					</ons-carousel>
+
+
+					<ons-bottom-toolbar>
+						<div class="tabbar">
+							<label class="tabbar__item" onclick="location.href='index.php'">
+								<input type="radio" name="tabbar-a">
+								<button class="tabbar__button">
+									<i class="tabbar__icon ion-stop"></i>
+									<div class="tabbar__label">Home</div>
+								</button>
+							</label>
+
+							<label class="tabbar__item" onclick="location.href='index.php'">
+								<input type="radio" name="tabbar-a" checked="checked">
+								<button class="tabbar__button">
+									<i class="tabbar__icon ion-record"></i>
+									<div class="tabbar__label">Explore</div>
+								</button>
+							</label>
+
+							<label class="tabbar__item" onclick="location.href='index.php'">
+								<input type="radio" name="tabbar-a">
+								<button class="tabbar__button">
+									<i class="tabbar__icon ion-star"></i>
+									<div class="tabbar__label">Profile</div>
+								</button>
+							</label>
 						</div>
-					</ons-card>
-				</ons-carousel-item>
-
-				<ons-carousel-item>
-					<ons-card id="persona4">
-						<div class="title">
-							Persona 4: Jessica
-						</div>
-						<br>
-						<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
-						<div class="content">
-							<ons-list>
-								<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Coffee Lover</ons-list-header>
-								<ons-list-item modifier="nodivider">Loves checking out new coffeeshops</ons-list-item>
-								<ons-list-item modifier="nodivider">Coffee is always a thing</ons-list-item>
-							</ons-list>
-							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
-							<ons-button modifier="button large--cta">
-								<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
-								</ons-button>
-							</section>
-						</div>
-					</ons-card>
-				</ons-carousel-item>
-
-			</ons-carousel>
+					</ons-bottom-toolbar>
 
 
-			<ons-bottom-toolbar>
-				<div class="tabbar">
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-stop"></i>
-							<div class="tabbar__label">Home</div>
-						</button>
-					</label>
+				</ons-page>
 
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a" checked="checked">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-record"></i>
-							<div class="tabbar__label">Explore</div>
-						</button>
-					</label>
+			</body>
 
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-star"></i>
-							<div class="tabbar__label">Three</div>
-						</button>
-					</label>
-				</div>
-			</ons-bottom-toolbar>
-
-
-		</ons-page>
-
-	</body>
-
-	</html>
+			</html>
