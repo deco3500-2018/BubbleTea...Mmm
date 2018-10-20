@@ -1,68 +1,3 @@
-<?php
-include "start.php";
-
-
-
-if(isset($_POST['login_btn']))
-{
-	
-	$email=mysqli_real_escape_string($db,$_POST['email']);
-	$password=mysqli_real_escape_string($db,$_POST['password']);
-   // $userID=mysqli_real_escape_string($db,$_GET['id']);
-
-    //$hash=md5($password); //Remember we hashed password before storing last time
-	$hash = password_hash($password, PASSWORD_DEFAULT);
-
-
-	$sql="SELECT * FROM users WHERE email='$email' and password='$password'";
-	$result=mysqli_query($db,$sql);
-	
-
-
-
-	if (password_verify($password, $hash))
-	{
-		$_SESSION['correctPassword'] =true;
-			//echo "correct password!<br>";
-
-	}
-	else {
-		echo 'Invalid password.';
-	}
-
-
-
-	if( $_SESSION['correctPassword'] =true)  
-  //  if(password_verify($password, $hash))
-	{
-		//echo "correct password!<br>";
-		
-		$email = mysqli_fetch_assoc($result);
-       // $_SESSION['message']="You are now Loggged In ";
-    //    $_SESSION['username']=$username;
-      //  $_SESSION['user'] = $user;
-     //   $_SESSION['loggedin']=true;
-       // $_SESSION["userID"] = $resultID;
-
-		header("location:personas.php");
-
-
-        //echo $_SESSION["userID"];
-	}
-	else
-	{
-		$_SESSION['message']="Username and Password combination incorrect";
-	}
-}
-
-
-
-if(isset($_POST['register_btn']))
-{
-	header("location:register.php");
-}
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -80,28 +15,41 @@ if(isset($_POST['register_btn']))
 	<ons-page id="bg">
 
 	<!-- Login Section --> 
-	<form method="post" action="login.php" style="margin-top: 50%;">
-		<div style="text-align: center;">
+		<div style="text-align: center; margin-top: 50%;">
 			<h1 id="text-bold" style="text-align: center; margin-top: 10%;">IN THE MOMENT</h1>
 			<br>
 
 			<ons-list style="max-width: 80%; margin: 10%;">
 				<ons-list-item modifier="noborder">
-					<ons-input placeholder="What's your name? "></ons-input>
+					<ons-input placeholder="What's your name? " id="name"></ons-input>
 				</ons-list-item>
 			</ons-list>
 
-			<section style="max-width: 80%; margin: 10%;">
-				<ons-button modifier="button large--cta">
-					<ons-input input-id="textclr" type="submit" name="login_btn" value="START">
+			<section style="max-width: 80%; margin: 10%; ">
+				<ons-button modifier="button large--cta" onclick="submitName()">
+					<ons-input input-id="textclr"  name="login_btn" value="START">
 				</ons-button>
-
+				
 			</section>
+			
+			<form id="nameForm" name="nameForm" action="personas.php" method="post">
+				<input type="hidden" name="name" id="hiddenName">
+			</form>
 		</div>
-	</form>
 
 </ons-page>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+	</script>
+
+	<script type="text/javascript" src="js/eventHandling.js"></script>
 
 </body>
 

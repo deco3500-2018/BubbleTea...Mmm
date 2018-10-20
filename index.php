@@ -2,15 +2,9 @@
 include "start.php";
 include "error.php";
 
-if(isset($_SESSION['user'])&&isset($_SESSION['username'])){
+if(isset($_SESSION['username'])&& isset($_POST['interest'])){
 	$name = $_SESSION['username'];
-	if(!empty($_POST['interest'])) {
-    foreach($_POST['interest'] as $interest) {
-            echo $check; //echoes the value set in the HTML form for each checked checkbox.
-                         //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
-                         //in your case, it would echo whatever $row['Report ID'] is equivalent to.
-		}
-	}
+	$_SESSION['interest'] = $_POST['interest'];
 } else{
 	header("Location:login.php");
 }	
@@ -180,11 +174,11 @@ if(isset($_SESSION['user'])&&isset($_SESSION['username'])){
 			</button>
 		</label>
 
-		<label class="tabbar__item" onclick="location.href='index.php'">
+		<label class="tabbar__item" onclick="location.href='timeSelection.php'">
 			<input type="radio" name="tabbar-a" checked="checked">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-record"></i>
-				<div class="tabbar__label">Explore</div>
+				<div class="tabbar__label">Start</div>
 			</button>
 		</label>
 
@@ -192,17 +186,10 @@ if(isset($_SESSION['user'])&&isset($_SESSION['username'])){
 			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-star"></i>
-				<div class="tabbar__label">Three</div>
+				<div class="tabbar__label">Explore</div>
 			</button>
 		</label>
 
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-stop"></i>
-				<div class="tabbar__label">Four</div>
-			</button>
-		</label>
 
 	</div>
 </ons-bottom-toolbar>

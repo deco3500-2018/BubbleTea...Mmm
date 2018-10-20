@@ -1,6 +1,6 @@
 <?php
 include "start.php";
-
+$_SESSION['username']= $_POST['name'];
 ?>
 <!DOCTYPE html>
 <html>
