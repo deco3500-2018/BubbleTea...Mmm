@@ -29,8 +29,9 @@ include "error.php";
 			<!-- dynamically create the checkbox base on interest retrieved from the database-->
 			<form name="interestForm" action="index.php" method="post">
 				<?php
+				$id = $_GET['id'];
 			// to be retrieved from the database
-				$_SESSION['user'] = 1;
+				$_SESSION['user'] = $id;
 			// to set in the login
 				$_SESSION['username'] = 'name';
 
@@ -44,7 +45,7 @@ include "error.php";
 					while ($row = mysqli_fetch_assoc($rs)) {
 						echo ' <input type="checkbox" name="interest[]" value="'.$row['interest'].'">'.$row['interest'].'<br>';
 					}
-				} else if (!isset($_SESSION['fb_access_token'])){
+				} else {
 					header("Location:login.php");
 				}
 

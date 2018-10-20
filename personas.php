@@ -32,7 +32,6 @@ include "start.php";
 		<ons-carousel class="carousel" auto-scroll id="carousel" auto-refresh swipeable overscrollable>
 			<!-- Card 1 --> 
 			<ons-carousel-item>
-				<form method="post" action="interestSelection.php">
 					<ons-card id="persona1">
 						<div class="title">
 							Persona 1: Mary
@@ -46,15 +45,14 @@ include "start.php";
 								<ons-list-item modifier="nodivider">Keeping on top of trends is a must</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
-								
-								<ons-button modifier="button large--cta">
-									<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
-								</ons-button>
-
+								<a href="interestSelection.php?id=1">
+									<ons-button modifier="button large--cta">
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+									</ons-button>
+								</a>
 							</section>
 						</div>
 					</ons-card>
-				</form>
 			</ons-carousel-item>
 
 
@@ -73,9 +71,11 @@ include "start.php";
 							<ons-list-item modifier="nodivider">A sporty individual who prefers to keep on the move</ons-list-item>
 						</ons-list>
 						<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
-							<ons-button modifier="button large--cta">
-								<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
-								</ons-button>
+							<a href="interestSelection.php?id=2">
+									<ons-button modifier="button large--cta">
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+									</ons-button>
+								</a>
 							</section>
 						</div>
 					</ons-card>
@@ -98,9 +98,11 @@ include "start.php";
 								<ons-list-item modifier="nodivider">Interested in anything and everything artistic</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
-								<ons-button modifier="button large--cta">
-									<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
+								<a href="interestSelection.php?id=3">
+									<ons-button modifier="button large--cta">
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
 									</ons-button>
+								</a>
 								</section>
 							</div>
 						</ons-card>
@@ -122,44 +124,17 @@ include "start.php";
 									<ons-list-item modifier="nodivider">Coffee is always a thing</ons-list-item>
 								</ons-list>
 								<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+									<a href="interestSelection.php?id=4">
 									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA">
-										</ons-button>
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+									</ons-button>
+									</a>
 									</section>
 								</div>
 							</ons-card>
 						</ons-carousel-item>
 
 					</ons-carousel>
-
-
-					<ons-bottom-toolbar>
-						<div class="tabbar">
-							<label class="tabbar__item" onclick="location.href='index.php'">
-								<input type="radio" name="tabbar-a">
-								<button class="tabbar__button">
-									<i class="tabbar__icon ion-stop"></i>
-									<div class="tabbar__label">Home</div>
-								</button>
-							</label>
-
-							<label class="tabbar__item" onclick="location.href='index.php'">
-								<input type="radio" name="tabbar-a" checked="checked">
-								<button class="tabbar__button">
-									<i class="tabbar__icon ion-record"></i>
-									<div class="tabbar__label">Explore</div>
-								</button>
-							</label>
-
-							<label class="tabbar__item" onclick="location.href='index.php'">
-								<input type="radio" name="tabbar-a">
-								<button class="tabbar__button">
-									<i class="tabbar__icon ion-star"></i>
-									<div class="tabbar__label">Profile</div>
-								</button>
-							</label>
-						</div>
-					</ons-bottom-toolbar>
 
 
 				</ons-page>
