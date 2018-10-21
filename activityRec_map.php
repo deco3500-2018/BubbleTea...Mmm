@@ -55,46 +55,33 @@ include "start.php";
 		</div>
 	</ons-toolbar>
 
+	<ons-card style="height: 90%;">
+		<!-- showing the map --> 
+		<article style="height: 40%;">
+			<div style="width: 87%; height: 100%; position: absolute; margin-left: auto; margin-right: auto; display: block;">
 
-<!-- <div>
-<div id="map" style="max-height: 40%; margin: 10%;"></div>
-	<script>
-		function initMap() {
-			var uq = {lat: -27.495421, lng: 153.011837};
+			<div id="map" style="height: 40%;"></div>		
 
-			var map = new google.maps.Map(document.getElementById('map'), {
-				center: uq,
-				zoom: 14
-			});
+		</div>
+		</article>
 
-			var marker = new google.maps.Marker({
-				map: map,
-				position: uq,
-				title: 'Hello World!'
-			});
-		}
-	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1U60JLm18jCDzO0lir9DUQozARJ4M14Q&callback=initMap" async defer></script>
-</div> -->
+		<script>
+			var customLabel = {
+				restaurant: {
+					label: 'R'
+				},
+				bar: {
+					label: 'B'
+				}
+			};
 
-<div id="map" style="max-height: 40%;"></div>
-
-<script>
-	var customLabel = {
-		restaurant: {
-			label: 'R'
-		},
-		bar: {
-			label: 'B'
-		}
-	};
-
-	function initMap() {
-		var map = new google.maps.Map(document.getElementById('map'), {
-			center: new google.maps.LatLng(-33.863276, 151.207977),
-			zoom: 12
-		});
-		var infoWindow = new google.maps.InfoWindow;
+			function initMap() {
+				var map = new google.maps.Map(document.getElementById('map'), {
+					center: new google.maps.LatLng(-27.499940, 153.015218),
+					zoom: 12,
+					disableDefaultUI: true
+				});
+				var infoWindow = new google.maps.InfoWindow;
 
           // Change this depending on the name of your PHP or XML file
           downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
@@ -152,136 +139,72 @@ include "start.php";
 
       function doNothing() {}
   </script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1U60JLm18jCDzO0lir9DUQozARJ4M14Q&callback=initMap">
-</script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1U60JLm18jCDzO0lir9DUQozARJ4M14Q&callback=initMap"></script>
 
+<br><br><br>
 
-
-<!-- <ons-segment style="margin-top: 100%;">
-	<div style="height: 200px; padding: 1px 0 0 0;">
-  <div class="card">
-    <h2 class="card__title">Card Title</h2>
-    <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-  </div>
+<div class="title" style="text-align: center; display: block;">
+	INSERT ACTIVITY NAME
 </div>
 
-	<div class="dialog">
-		<div class="dialog-container">
-			<p style="text-align:center;margin-top:40px;opacity:0.4;">Content</p>
-		</div>
-	</div>
-</ons-segment> -->
+<br>
 
-<!-- <ons-card>
-	<div class="title" style="text-align: center;">
+<div class="content">
 
-		Make a dessert in under 20 minutes!
-	</div>
-	<br>
-	<div class="content">
+	<ons-list>
+		<ons-list-header>Information</ons-list-header>
+		<div><b>Description  </b> some information about the place</div>
+        <div><b>Opening Hours  </b> 
+        	<ul>
+        		<li>Mon  |  9am - 9pm</li>
+        		<li>Mon  |  9am - 9pm</li>
+        		<li>Mon  |  9am - 9pm</li>
+        		<li>Mon  |  9am - 9pm</li>
+        		<li>Mon  |  9am - 9pm</li>
+        		<li>Mon  |  9am - 9pm</li>
+        		<li>Mon  |  9am - 9pm</li>
+        	</ul>
+        </div>
 
-		<ons-row style="margin-bottom: 15px;">
-			<ons-col width="40px" style="text-align: center; line-height: 31px;">
-				<ons-icon icon="md-thumb-down"></ons-icon>
-			</ons-col>
-			<ons-col>
-				<ons-range style="width: 100%;" value="75"></ons-range>
-			</ons-col>
-			<ons-col width="40px" style="text-align: center; line-height: 31px;">
-				<ons-icon icon="md-thumb-up"></ons-icon>
-			</ons-col>
-		</ons-row>
+		<!-- <ons-list-item>
+			<div class="left">
+				<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+			</div>
+			<div class="center">
+				<span class="list-item__title">Youtube - Beginner's pilates</span><span class="list-item__subtitle">On the Internet</span>
+			</div>
+		</ons-list-item>
+
+		<ons-list-item>
+			<div class="left">
+				<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+			</div>
+			<div class="center">
+				<span class="list-item__title">Youtube - 15 minute workout</span><span class="list-item__subtitle">On the Internet</span>
+			</div>
+		</ons-list-item> -->
+
+		  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <p>
+        This is a simple dialog!
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+	</ons-list>
+
+	<ons-button modifier="large--quiet" style="display: inline-block;" onclick="location.href='activityRec.php'">Maybe Later</ons-button>
+
+</div>
 
 
-			<ons-list>
-				<ons-list-header>Select option to start</ons-list-header>
-				<ons-list-item>
-					<div class="left">
-						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
-					</div>
-					<div class="center">
-						<span class="list-item__title">Youtube - Custard tart</span><span class="list-item__subtitle">On the Internet</span>
-					</div>
-				</ons-list-item>
+</ons-card>
 
-				<ons-list-item>
-					<div class="left">
-						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
-					</div>
-					<div class="center">
-						<span class="list-item__title">Blog - Matcha Pudding</span><span class="list-item__subtitle">On the Internet</span>
-					</div>
-				</ons-list-item>
-
-				<ons-list-item>
-					<div class="left">
-						<img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
-					</div>
-					<div class="center">
-						<span class="list-item__title">Instagram - Berry cupcake</span><span class="list-item__subtitle">On the Internet</span>
-					</div>
-				</ons-list-item>
-			</ons-list>
-
-		</div>
-
-		<ons-button modifier="large--quiet" style="display: inline-block;" onclick="location.href='activity2.php'">Maybe Later</ons-button>
-	</ons-card> -->
-
-	<style type="text/css">
-	.header-view {
-		width: 100%;
-		height: 20%;
-		text-align: center;
-		display: table;
-	}
-
-	.headericon {
-		vertical-align: middle !important;
-		font-size: 100px;
-		opacity: 1;
-		display: table-cell;
-	}
-
-</style>
-
-<ons-bottom-toolbar>
-	<div class="tabbar">
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-stop"></i>
-				<div class="tabbar__label">Home</div>
-			</button>
-		</label>
-
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a" checked="checked">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-record"></i>
-				<div class="tabbar__label">Explore</div>
-			</button>
-		</label>
-
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-star"></i>
-				<div class="tabbar__label">Three</div>
-			</button>
-		</label>
-
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-stop"></i>
-				<div class="tabbar__label">Four</div>
-			</button>
-		</label>
-
-	</div>
-</ons-bottom-toolbar>
+<?php include "footer.php";?>
 
 
 </ons-page>
