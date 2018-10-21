@@ -1,7 +1,7 @@
 #bg .page__background {
 	background: #22c1c3;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #fdbb2d, #22c1c3);
+	background: -webkit-linear-gradient(to bottom, #4CA1AF, #C4E0E5);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #43CBFF, #FFE985);
 }
 
 #textclr{
@@ -51,3 +51,4 @@ a{
 .text-input--material {
 	background-image: linear-gradient(to top,transparent 0px,rgba(0, 0, 0, 0) 0px);
 }
+

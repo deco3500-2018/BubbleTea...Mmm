@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	session_destroy();
-	?>
+	session_unset();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,19 +19,19 @@
 	<ons-page id="bg">
 
 	<!-- Login Section --> 
-		<div style="text-align: center; margin-top: 50%;">
-			<h1 id="text-bold" style="text-align: center; margin-top: 10%;">IN THE MOMENT</h1>
+		<div style="text-align: center; margin: auto; margin-top: 10%; max-width:800px;">
+			<img src="img/logoWhite.png" style="width:80%; margin-top:50%"/>
 			<br>
 
-			<ons-list style="max-width: 80%; margin: 10%;">
+			<ons-list style="margin: 10%;background-color:#ffffff87;border-radius:5px;">
 				<ons-list-item modifier="noborder">
 					<ons-input placeholder="What's your name? " id="name"></ons-input>
 				</ons-list-item>
 			</ons-list>
 
-			<section style="max-width: 80%; margin: 10%; ">
-				<ons-button modifier="button large--cta" onclick="submitName()">
-					<ons-input input-id="textclr"  name="login_btn" value="START">
+            <section style="max-width: 80%; margin: 10%; ">
+                <ons-button modifier="button large--cta" style="background-color:#22c1c3e0;color:white" onclick="submitName()">
+                    <ons-input input-id="textclr"  name="login_btn" value="START">
 				</ons-button>
 				
 			</section>

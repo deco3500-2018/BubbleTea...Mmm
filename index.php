@@ -94,6 +94,9 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 
 		<!-- Graph section --> 
 		<section>
+		<!-- https://codepen.io/deep1808/pen/yNQGZe -->
+		<!-- https://codepen.io/miyavibest/pen/xylKw -->
+		<!-- https://codepen.io/bbodine1/pen/Itgop -->
 			<canvas id="myChart" width="80" height="50"></canvas>
 			<script>
 				var ctx = document.getElementById("myChart").getContext('2d');

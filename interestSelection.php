@@ -89,7 +89,7 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 		</script>
 		
-		<script type="text/javascript" src="js/eventHandling.js?version=2"></script>
+		<script type="text/javascript" src="js/eventHandling.js?version=3"></script>
 	
 	</body>
 	

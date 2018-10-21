@@ -27,11 +27,11 @@ include "error.php";
 	<h1 style="margin: 2%;" class="title" id="textclr">What do you feel like doing today?</h1>
       <br>
     </div>
+	<div>
 	<!-- dynamically create the checkbox base on interest retrieved from the database-->
 				<?php
 				
-					if (isset($_POST['time'])){
-						$_SESSION['time'] = $_POST['time'];
+					if (isset($_SESSION['time'])){
 
 						$sql="SELECT * FROM category";
 
@@ -58,7 +58,7 @@ include "error.php";
 				?>
 			</div>
 				<ons-row class="user_cover">
-				<ons-button modifier="button--cta" onclick="submitInterest()" style="display: inline-block; margin-right: auto; margin-left: auto;">
+				<ons-button modifier="button--cta" onclick="submitCategory()" style="display: inline-block; margin-right: auto; margin-left: auto;">
 					<ons-input input-id="textclr"  name="login_btn" value="Submit">
 				</ons-button>
 				</ons-row>
@@ -81,7 +81,7 @@ include "error.php";
 			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 	</script>
 
-	<script type="text/javascript" src="js/eventHandling.js?version=2"></script>
+	<script type="text/javascript" src="js/eventHandling.js?version=3"></script>
 
 
 

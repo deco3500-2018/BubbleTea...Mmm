@@ -29,8 +29,12 @@
 			
 			<ons-carousel class="carousel" auto-scroll id="carousel" auto-refresh swipeable overscrollable>
 				<?php
-					if( isset($_POST['interest'])){
-						$category = json_decode($_POST['interest']);
+				if (!isset($_SESSION['category'])){
+					$_SESSION['category'] = $_POST['interest'];
+				}
+				
+					if( isset($_SESSION['category'])&&isset($_SESSION['interest'])){
+						$category = json_decode($_SESSION['category']);
 						$interest = json_decode($_SESSION['interest']);
 						
 						$categorySql = "";
