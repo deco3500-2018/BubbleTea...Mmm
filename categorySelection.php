@@ -19,8 +19,12 @@ include "error.php";
 
 <body>
 	<ons-page id="bg">
+	<?php
+				include "header.php";		
+			?>
+			
 	<div style="text-align: center;">
-      <h1 id="text-bold" style="text-align: center; margin-top: 10%;">What do you feel like doing today?</h1>
+	<h1 style="margin: 2%;" class="title" id="textclr">What do you feel like doing today?</h1>
       <br>
     </div>
 	<!-- dynamically create the checkbox base on interest retrieved from the database-->
@@ -62,6 +66,9 @@ include "error.php";
 			<form id="interestForm" name="interestForm" action="activitySelection.php" method="post">
 				<input type="hidden" name="interest" id="hiddenInterest">
 			</form>
+			
+			<?php include "footer.php";?>
+			
 			</ons-page>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

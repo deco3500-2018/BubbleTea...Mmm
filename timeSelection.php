@@ -12,12 +12,15 @@ include "error.php";
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
 </head>
 
 <body>
 
 	<ons-page id="bg">
+	<?php
+				include "header.php";		
+			?>
 		<div style="text-align: center; margin-top: 50%;">
 			<h1 style="margin: 10%;" class="title" id="textclr">How much free time do you have now?</h1>
 			<div>
@@ -39,6 +42,7 @@ include "error.php";
 				</form>
 			</div>
 		</div>
+		<?php include "footer.php";?>
 	</ons-page>
 
 </body>

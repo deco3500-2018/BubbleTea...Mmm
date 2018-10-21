@@ -22,14 +22,10 @@
 		<ons-page id="bg">
 			<div class="background"></div>
 			
-			<!-- Navbar -->
-			<ons-toolbar class="toolbar toolbar--transparent">
-				
-				<div class="toolbar__center" id="textclr" style="text-transform: bold;">
-					Select an activity that you'd like to do!
-				</div>
-				
-			</ons-toolbar>
+			<?php
+				include "header.php";		
+			?>
+			
 			
 			<ons-carousel class="carousel" auto-scroll id="carousel" auto-refresh swipeable overscrollable>
 				<?php
@@ -74,8 +70,16 @@
 						AND hour(now()) <= hour(endTimeSuitable)";
 					
 						$result = mysqli_query($db,$sql);
-					
+						
+						
+						
 						while ($row = mysqli_fetch_assoc($result)) {
+							$link;
+							if ($row['type']=='Location'){
+								$link = "activityRec_map.php?id=".$row['recomID'];
+							} else{
+								$link = "activityRec.php?id=".$row['recomID'];
+							}
 							echo '
 							<ons-carousel-item>
 								<form method="post">
@@ -89,9 +93,11 @@
 											
 											<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 												
+												<a href="'.$link.'">
 												<ons-button modifier="button large--cta">
-													<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS ACTIVITY"></ons-input>
+													<ons-input input-id="textclr" name="login_btn" value="SELECT THIS ACTIVITY"></ons-input>
 												</ons-button>
+												</a>
 												
 												<br>
 												
@@ -115,33 +121,7 @@
 			</ons-carousel>
 			
 			
-			<ons-bottom-toolbar>
-				<div class="tabbar">
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-stop"></i>
-							<div class="tabbar__label">Home</div>
-						</button>
-					</label>
-					
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a" checked="checked">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-record"></i>
-							<div class="tabbar__label">Explore</div>
-						</button>
-					</label>
-					
-					<label class="tabbar__item" onclick="location.href='index.php'">
-						<input type="radio" name="tabbar-a">
-						<button class="tabbar__button">
-							<i class="tabbar__icon ion-star"></i>
-							<div class="tabbar__label">Profile</div>
-						</button>
-					</label>
-				</div>
-			</ons-bottom-toolbar>
+			<?php include "footer.php";?>
 			
 			
 		</ons-page>

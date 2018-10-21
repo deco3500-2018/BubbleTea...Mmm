@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 20, 2018 at 01:58 PM
+-- Generation Time: Oct 21, 2018 at 11:16 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.0.32
 
@@ -108,6 +108,7 @@ CREATE TABLE IF NOT EXISTS `recommendation` (
   `image` varchar(500) NOT NULL,
   `startTimeSuitable` time NOT NULL,
   `endTimeSuitable` time NOT NULL,
+  `type` varchar(100) NOT NULL,
   PRIMARY KEY (`recomID`),
   KEY `categID` (`categID`),
   KEY `interestID` (`interestID`)
@@ -117,10 +118,10 @@ CREATE TABLE IF NOT EXISTS `recommendation` (
 -- Dumping data for table `recommendation`
 --
 
-INSERT INTO `recommendation` (`recomID`, `title`, `categID`, `interestID`, `timeRangeStart`, `timeRangeEnd`, `image`, `startTimeSuitable`, `endTimeSuitable`) VALUES
-(1, 'Coffee', 4, 4, 30, 80, '', '09:00:00', '17:00:00'),
-(2, 'Art gallery', 1, 2, 20, 90, '', '09:00:00', '14:00:00'),
-(3, 'Yoga', 5, 3, 0, 30, 'img\\activity\\yoga.png', '18:00:00', '24:00:00');
+INSERT INTO `recommendation` (`recomID`, `title`, `categID`, `interestID`, `timeRangeStart`, `timeRangeEnd`, `image`, `startTimeSuitable`, `endTimeSuitable`, `type`) VALUES
+(1, 'Coffee', 4, 4, 30, 80, '', '09:00:00', '17:00:00', 'Location'),
+(2, 'Art gallery', 1, 2, 20, 90, '', '09:00:00', '14:00:00', 'Location'),
+(3, 'Yoga', 5, 3, 0, 30, 'img\\activity\\yoga.png', '18:00:00', '24:00:00', 'Activity');
 
 -- --------------------------------------------------------
 
@@ -130,17 +131,26 @@ INSERT INTO `recommendation` (`recomID`, `title`, `categID`, `interestID`, `time
 
 DROP TABLE IF EXISTS `recommendationdetails`;
 CREATE TABLE IF NOT EXISTS `recommendationdetails` (
-  `recomDId` int(100) NOT NULL,
-  `description` varchar(500) NOT NULL,
-  `link1` varchar(100) NOT NULL,
-  `link2` varchar(100) NOT NULL,
-  `link3` varchar(100) NOT NULL,
-  `latitude` decimal(65,4) NOT NULL,
-  `longitude` decimal(65,4) NOT NULL,
+  `recomDId` int(100) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `link1` varchar(500) NOT NULL,
+  `link2` varchar(500) NOT NULL,
+  `link3` varchar(500) NOT NULL,
+  `latitude` decimal(65,4) DEFAULT NULL,
+  `longitude` decimal(65,4) DEFAULT NULL,
   `recomID` int(255) NOT NULL,
+  `image` varchar(100) NOT NULL,
   PRIMARY KEY (`recomDId`),
   KEY `recomID` (`recomID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `recommendationdetails`
+--
+
+INSERT INTO `recommendationdetails` (`recomDId`, `title`, `description`, `link1`, `link2`, `link3`, `latitude`, `longitude`, `recomID`, `image`) VALUES
+(1, 'Yoga. Your gateway to good health. ', 'If you thought that yoga was all about bending and twisting your body in odd shapes, it\'s time to rethink. Yoga is much more. In very simple words, giving care to your body, mind and breath is yoga. This means that the century-old practice includes yoga postures (asanas), breathing techniques (pranayamas) and meditation. Through these, the body, mind and breath come in harmony with each other and that very moment yoga happens.', 'Yoga For Complete Beginners - 20 Minute Home Yoga Workout!|https://www.youtube.com/watch?v=v7AYKMP6rOE|youtube', 'Yoga for Beginners|https://www.yogajournal.com/practice/beginners|yogaJournal', 'Yoga Poses for Beginners|https://www.fitnessmagazine.com/workout/yoga/poses/beginner-yoga-poses/|fitness', NULL, NULL, 3, 'img/specificActivity/yoga.jpg');
 
 -- --------------------------------------------------------
 

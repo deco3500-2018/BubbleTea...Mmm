@@ -2,9 +2,12 @@
 include "start.php";
 include "error.php";
 
-if(isset($_SESSION['username'])&& isset($_POST['interest'])){
-	$name = $_SESSION['username'];
+if (!isset($_SESSION['interest'])){
 	$_SESSION['interest'] = $_POST['interest'];
+}
+
+if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
+	$name = $_SESSION['username'];
 } else{
 	header("Location:login.php");
 }	
@@ -20,29 +23,18 @@ if(isset($_SESSION['username'])&& isset($_POST['interest'])){
 	
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 </head>
 
 <body>
 
-	<ons-page id="bg">
-
-		<style type="text/css">
-			#bg .page__background {
-				background-color: white;
-			}
-
-			#textclr{
-				color: white;
-			}
-
-			#header {
-			background: #22c1c3;  /* fallback for old browsers */
-			background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
-			background: linear-gradient(to bottom, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-			}
-		</style>
+	<ons-page id="bg_index">
+<?php
+				$white = false;
+				include "header.php";		
+			?>
 
 		<!-- Navbar -->
 		<ons-toolbar class="toolbar toolbar--transparent">
@@ -142,57 +134,7 @@ if(isset($_SESSION['username'])&& isset($_POST['interest'])){
 			</script>
 		</section>
 
-		<!-- <style>
-		.intro {
-			text-align: center;
-			padding: 0 20px;
-			margin-top: 40px;
-		}
-
-		ons-card {
-			cursor: pointer;
-			color: #333;
-		}
-
-		.card__title,
-		.card--material__title {
-			font-size: 20px;
-		}
-
-		#white{
-			color: white;
-		}
-		</style> -->
-
-		<ons-bottom-toolbar>
-	<div class="tabbar">
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-stop"></i>
-				<div class="tabbar__label">Home</div>
-			</button>
-		</label>
-
-		<label class="tabbar__item" onclick="location.href='timeSelection.php'">
-			<input type="radio" name="tabbar-a" checked="checked">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-record"></i>
-				<div class="tabbar__label">Start</div>
-			</button>
-		</label>
-
-		<label class="tabbar__item" onclick="location.href='index.php'">
-			<input type="radio" name="tabbar-a">
-			<button class="tabbar__button">
-				<i class="tabbar__icon ion-star"></i>
-				<div class="tabbar__label">Explore</div>
-			</button>
-		</label>
-
-
-	</div>
-</ons-bottom-toolbar>
+		<?php include "footer.php";?>
 
 </ons-page>
 
