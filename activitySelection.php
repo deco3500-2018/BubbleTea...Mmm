@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 		<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 		<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
 	</head>
 	
 	<body>
@@ -45,18 +45,24 @@
 								$categorySql = "(".$category[$x];
 							} else if ($x == sizeof($category)-1){
 								$categorySql .= ",".$category[$x].")";
-							} 
+							}  else {
+								$categorySql .= ",".$category[$x];
+							}
 						}
 						
 						$interestSql = "";
+						
 						for ($y = 0; $y < sizeof($interest); $y++) {
+						
 							if (sizeof($interest) ==1){
 								$interestSql =  "(".$interest[$y].")";
 							} else if ($y == 0){
 								$interestSql = "(".$interest[$y];
-							} else if ($y == sizeof($interest)-1){
+							} else if ($y == sizeof($interest)-1){	
 								$interestSql .= ",".$interest[$y].")";
-							} 
+							} else {
+								$interestSql .= ",".$interest[$y];
+							}
 						}
 						
 						
@@ -66,7 +72,7 @@
 						"AND ".$_SESSION['time']." BETWEEN timeRangeStart AND timeRangeEnd 
 						AND hour(now()) >= hour(startTimeSuitable) 
 						AND hour(now()) <= hour(endTimeSuitable)";
-						
+					
 						$result = mysqli_query($db,$sql);
 					
 						while ($row = mysqli_fetch_assoc($result)) {
@@ -153,5 +159,9 @@
 		<script type="text/javascript" src="js/eventHandling.js"></script>
 		
 	</body>
+	
+	<?php
+		 echo "<script>console.log(".json_encode($sql).")</script>";
+	?>
 	
 </html>
