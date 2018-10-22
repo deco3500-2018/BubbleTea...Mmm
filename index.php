@@ -13,10 +13,10 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 }
 
 if(!isset($_SESSION['totalTime'])){
-    $_SESSION['totalTime'] = 0;
+	$_SESSION['totalTime'] = 0;
 } else if (isset($_SESSION["time"])){
-     $_SESSION['totalTime'] = round( $_SESSION['totalTime'] + ($_SESSION['time']/60)); 
-	 unset ($_SESSION["time"]);
+	$_SESSION['totalTime'] = round( $_SESSION['totalTime'] + ($_SESSION['time']/60)); 
+	unset ($_SESSION["time"]);
 }
 
 ?>
@@ -47,15 +47,15 @@ if(!isset($_SESSION['totalTime'])){
 
 		<div style="text-align: center; margin: auto;  max-width:800px;" id="textclr">
 
-		<h1 class="intro">
-			Welcome back
+			<h1 class="intro">
+				Welcome back
 
-			<?php
+				<?php
 
-			echo '' . $name; 
-			?>
-		</p>
-	</div>
+				echo '' . $name; 
+				?>
+			</p>
+		</div>
 
 		<div>
 			<img src="img/tired.png" style="margin:auto; display: block;"/>
@@ -87,52 +87,76 @@ if(!isset($_SESSION['totalTime'])){
 
 
 	<ons-card>
-	<!-- Graph section --> 
-	<section>
-		<canvas id="myChart" width="80" height="50"></canvas>
-		<script>
-			var ctx = document.getElementById("myChart").getContext('2d');
-			var myChart = new Chart(ctx, {
-				type: 'bar',
-				data: {
-					labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
-					datasets: [{
-						label: 'Free Time (# of Hours)',
-						data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 0, 0, 0, 0, 0, 0, 0],
-						backgroundColor: [
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						'rgba(54, 162, 235, 0.8)',
-						],
-						borderColor: [
-						'rgba(54, 162, 235, 0.8)'
-						],
-						borderWidth: 1
-					}]
-				},
-				options: {
-					scales: {
-						yAxes: [{
-							ticks: {
-								beginAtZero:true,
-								min: 0,
-                        		max: 24,
-							}
+		<!-- Graph section --> 
+		<section>
+			<canvas id="myChart" width="80" height="65"></canvas>
+			<script>
+				var ctx = document.getElementById("myChart").getContext('2d');
+				var myChart = new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+						datasets: [{
+							label: 'You',
+							data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 10, 2, 0, 0, 0, 0, 0],
+							backgroundColor: [
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							'rgba(106, 190, 226, 0.8)',
+							],
+							borderColor: [
+							'rgba(106, 190, 226, 0.8)'
+							],
+							borderWidth: 1
+						}, 
+						{
+							label: 'Other people',
+							data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 4, 8,0, 0, 0, 0, 0],
+							backgroundColor: [
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							'rgba(247, 182, 106, 0.8)',
+							],
+							borderColor: [
+							'rgba(247, 182, 106, 0.8)'
+							],
+							borderWidth: 1
 						}]
+					},
+					options: {
+						responsive: true,
+						title: {
+							display: true,
+							text: 'Hours of free time spent'
+						},
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true,
+									min: 0,
+									max: 24,
+								}
+							}]
+						}
 					}
-				}
-			});
-		</script>
-		<p>Average time:</p>
-		<p>Comparison to the average:</p>
-	</section>
-</ons-card>
+				});
+			</script>
+			<p>Average time:</p>
+			<p>Comparison to the average:</p>
+		</section>
+	</ons-card>
 
 	<?php include "footer.php";?>
 
