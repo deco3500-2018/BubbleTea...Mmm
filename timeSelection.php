@@ -1,6 +1,9 @@
 <?php
 include "start.php";
 include "error.php";
+
+unset ($_SESSION["category"]);
+unset ($_SESSION["time"]);
 ?>
 
 <!DOCTYPE html>

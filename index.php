@@ -10,7 +10,14 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 	$name = $_SESSION['username'];
 } else{
 	header("Location:login.php");
-}	
+}
+
+if(!isset($_SESSION['totalTime'])){
+    $_SESSION['totalTime'] = 0;
+} else if (isset($_SESSION["time"])){
+     $_SESSION['totalTime'] = round( $_SESSION['totalTime'] + ($_SESSION['time']/60)); 
+	 unset ($_SESSION["time"]);
+}
 
 ?>
 
@@ -34,10 +41,11 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 	<ons-page id="bg">
 		<?php
 		$white = false;
+		$back = false;
 		include "header.php";		
 		?>
 
-		<div style="text-align: center; margin: auto; margin-top: 10%; max-width:800px;" id="textclr">
+		<div style="text-align: center; margin: auto;  max-width:800px;" id="textclr">
 
 		<h1 class="intro">
 			Welcome back
@@ -49,8 +57,8 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 		</p>
 	</div>
 
-		<div class="camera-view">
-			<ons-icon class="camera-icon" icon="md-face" id="textclr"></ons-icon>
+		<div>
+			<img src="img/tired.png" style="margin:auto; display: block;"/>
 		</div>
 
 		<style type="text/css">
@@ -81,9 +89,6 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 	<ons-card>
 	<!-- Graph section --> 
 	<section>
-		<!-- https://codepen.io/deep1808/pen/yNQGZe -->
-		<!-- https://codepen.io/miyavibest/pen/xylKw -->
-		<!-- https://codepen.io/bbodine1/pen/Itgop -->
 		<canvas id="myChart" width="80" height="50"></canvas>
 		<script>
 			var ctx = document.getElementById("myChart").getContext('2d');
@@ -93,7 +98,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 					labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
 					datasets: [{
 						label: 'Free Time (# of Hours)',
-						data: [12, 9, 3, 5, 2, 3, 4, 7, 3, 5],
+						data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 0, 0, 0, 0, 0, 0, 0],
 						backgroundColor: [
 						'rgba(54, 162, 235, 0.8)',
 						'rgba(54, 162, 235, 0.8)',
@@ -115,13 +120,17 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 					scales: {
 						yAxes: [{
 							ticks: {
-								beginAtZero:true
+								beginAtZero:true,
+								min: 0,
+                        		max: 24,
 							}
 						}]
 					}
 				}
 			});
 		</script>
+		<p>Average time:</p>
+		<p>Comparison to the average:</p>
 	</section>
 </ons-card>
 
