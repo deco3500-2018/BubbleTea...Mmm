@@ -11,6 +11,6 @@
 	</div>
 	
 	<div class="toolbar__right">
-		<ons-toolbar-button icon="md-face" style="margin-left: 10px; color: white;"></ons-toolbar-button>
+		<ons-toolbar-button icon="md-face" style="margin-left: 10px; color: white;" onclick="location.href='account.php'"></ons-toolbar-button>
 	</div>
 </ons-toolbar>

@@ -16,7 +16,7 @@
 			</button>
 		</label>
 		
-		<label class="tabbar__item" onclick="location.href='index.php'">
+		<label class="tabbar__item" onclick="location.href='explore.php'">
 			<input type="radio" name="tabbar-a">
 			<button class="tabbar__button">
 				<i class="tabbar__icon ion-compass"></i>
