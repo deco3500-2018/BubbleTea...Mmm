@@ -1,12 +1,12 @@
 function submitInterest(){
-	if ($('.selected').length==0){
+	if ($('.select').length==0){
 		alert("you must select at least 1 interest");
 		return;
 	}
 	
 	var interestArray = new Array();
 	
-	$('.selected').each(function(i, obj) {
+	$('.select').each(function(i, obj) {
 		interestArray.push($(obj).attr('id'));
 	});
 	
@@ -25,14 +25,14 @@ function submitInterest(){
 }
 
 function submitCategory(){
-	if ($('.selected').length==0){
+	if ($('.select').length==0){
 		alert("you must select at least 1 interest");
 		return;
 	}
 	
 	var interestArray = new Array();
 	
-	$('.selected').each(function(i, obj) {
+	$('.select').each(function(i, obj) {
 		interestArray.push($(obj).attr('id'));
 	});
 	
@@ -52,7 +52,8 @@ function submitCategory(){
 }
 
 $( ".interest" ).click(function() {
-	$( this ).toggleClass( "selected");
+	$( this  ).toggleClass( "select");
+	$( this  ).find(".user_thumbnail").toggleClass( "selected");
 });
 
 function submitName(){

@@ -12,7 +12,7 @@
 		<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 		<script src="https://d3js.org/d3.v5.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css?version=3">
+		<link rel="stylesheet" type="text/css" href="css/style.css?version=4">
 	</head>
 	
 	<body>

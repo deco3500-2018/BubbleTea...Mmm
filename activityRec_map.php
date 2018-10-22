@@ -38,22 +38,10 @@
 			
 			
 			
-			<!-- Navbar -->
-			<ons-toolbar class="toolbar toolbar--transparent">
-				<div class="toolbar__right">
-					<span class="toolbar-button">
-						<i class="ion-navicon" style="font-size:32px; vertical-align:-6px; margin-right: 10px; color: white;"></i>
-					</span>
-				</div>
-				
-				<div class="toolbar__center" id="textclr" style="text-transform: bold;">
-					Recommended Activity
-				</div>
-				
-				<div class="toolbar__left">
-					<ons-toolbar-button icon="md-face" style="margin-left: 10px; color: white;"></ons-toolbar-button>
-				</div>
-			</ons-toolbar>
+			<?php
+				$pageName = "Recommended Places";
+				include "header.php";		
+			?>
 			
 			<ons-card style="height: 90%;">
 				<!-- showing the map --> 
@@ -178,7 +166,7 @@
 					<span class="fa fa-star"></span>
 					<span class="fa fa-star"></span>
 					
-					<span>From Google Review</span>
+					<span><i style="font-size:0.7em">From Google Review</i></span>
 					
 					<ons-list>	 
 						<p id="description"></p>

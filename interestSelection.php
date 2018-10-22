@@ -1,5 +1,5 @@
 <?php
-	include "start.php";
+	
 	include "error.php";
 ?>
 
@@ -13,8 +13,8 @@
 		<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 		<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/interestcss.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
+		<link rel="stylesheet" type="text/css" href="css/interestcss.css?version=2">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 		
@@ -24,12 +24,14 @@
 		
 		<ons-page id="bg">
 			<div style="text-align: center;">
-				<h1 id="text-bold" style="text-align: center; margin-top: 10%;">Below are things we believed you might be interested in:</h1>
+				<h1 id="text-bold" style="text-align: center; margin-top: 10%; margin-left:5%; margin-right:5%;">Below are things we believed you might be interested in:</h1>
 				<br>
 			</div>
 			<div>
 				<!-- dynamically create the checkbox base on interest retrieved from the database-->
 				<?php
+				include "start.php";
+					$colourArray = array("#284754", "#3B83A3", "#F7B66A", "#F78360", "#6ABEE2");
 					$id = $_GET['id'];
 					// to be retrieved from the database
 					$_SESSION['user'] = $id;
@@ -39,19 +41,23 @@
 						$user = $_SESSION['user'];
 						
 						$sql="SELECT interestID FROM userinterest WHERE userID = $user";
+					
+						
 						$result = mysqli_query($db,$sql);
+						
 						
 						$count=0;
 						while ($rowResult = mysqli_fetch_assoc($result)) {
 							$sqlInterest="SELECT * FROM interest WHERE interestID = ".$rowResult['interestID'];
 							$resultInterest = mysqli_query($db,$sqlInterest);
 							$row = mysqli_fetch_assoc($resultInterest);
+
 							if ($count%2 ==0){
 								echo '<ons-row class="user_cover">';
 							}
 							echo '  <ons-col class="interest" id = "'.$row['interestID'].'">
-							<div class="user_thumbnail" style="background-color: #dd6218"><ons-icon icon="'.$row['image'].'"></ons-icon></div>
-							<div class="username" id="user_2_name">'.$row['name'].'</div>
+							<div class="user_thumbnail" style="background-color: '.$colourArray[$count].'"><ons-icon icon="'.$row['image'].'"></ons-icon></div>
+							<div class="username" id="user_2_name" style="font-size:1em">'.$row['name'].'</div>
 							</ons-col>';
 							$count++;
 							if ($count%2 ==0){
@@ -67,8 +73,8 @@
 				
 			</div>
 			<ons-row class="user_cover">
-				<ons-button modifier="button--cta" style="display: inline-block; margin-right: auto; margin-left: auto;">
-					<ons-input type="submit" value="Submit" onclick="submitInterest()">
+				<ons-button modifier="button--cta" style="display: inline-block;margin-right: auto; margin-left: auto; color:white">
+					<ons-input input-id="textclr" type="submit" onclick="submitInterest()">
 					</ons-input>
 				</ons-button>
 			</ons-row>
@@ -89,7 +95,7 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 		</script>
 		
-		<script type="text/javascript" src="js/eventHandling.js?version=3"></script>
+		<script type="text/javascript" src="js/eventHandling.js?version=4"></script>
 	
 	</body>
 	

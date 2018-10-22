@@ -12,8 +12,8 @@ include "error.php";
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/interestcss.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
+	<link rel="stylesheet" type="text/css" href="css/interestcss.css?version=2">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 </head>
 
@@ -24,12 +24,13 @@ include "error.php";
 			?>
 			
 	<div style="text-align: center;">
-	<h1 style="margin: 2%;" class="title" id="textclr">What do you feel like doing today?</h1>
-      <br>
+	<h1 style=" margin-left:5%; margin-right:5%;" class="title" id="textclr">What do you feel like doing today?</h1>
     </div>
 	<div>
 	<!-- dynamically create the checkbox base on interest retrieved from the database-->
 				<?php
+				
+					$colourArray = array("#284754", "#3B83A3", "#F7B66A", "#F78360", "#6ABEE2","#964713");
 				
 					if (isset($_SESSION['time'])){
 
@@ -42,8 +43,8 @@ include "error.php";
 								echo '<ons-row class="user_cover">';
 							}
 							echo '  <ons-col class="interest" id = "'.$row['categID'].'">
-							<div class="user_thumbnail" style="background-color: #dd6218"><ons-icon icon="'.$row['image'].'"></ons-icon></div>
-							<div class="username" id="user_2_name">'.$row['name'].'</div>
+							<div class="user_thumbnail" style="background-color: '.$colourArray[$count].'"><ons-icon icon="'.$row['image'].'"></ons-icon></div>
+							<div class="username" id="user_2_name" style="font-size:1em">'.$row['name'].'</div>
 							</ons-col>';
 							$count++;
 							if ($count%2 ==0){
@@ -81,7 +82,7 @@ include "error.php";
 			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 	</script>
 
-	<script type="text/javascript" src="js/eventHandling.js?version=3"></script>
+	<script type="text/javascript" src="js/eventHandling.js?version=5"></script>
 
 
 

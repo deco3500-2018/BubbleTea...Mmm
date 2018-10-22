@@ -153,8 +153,6 @@ if(!isset($_SESSION['totalTime'])){
 					}
 				});
 			</script>
-			<p>Average time:</p>
-			<p>Comparison to the average:</p>
 		</section>
 	</ons-card>
 

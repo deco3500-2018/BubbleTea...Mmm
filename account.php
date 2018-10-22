@@ -107,19 +107,16 @@ if(!isset($_SESSION['totalTime'])){
 
 
 		<section style="max-width: 80%; margin: 10%; ">
-			<ons-button modifier="large--cta" style="background-color:#22c1c3e0;color:white" onclick="logOut()">Sign out
+			<a href="login.php">
+			<ons-button modifier="large--cta" style="background-color:#22c1c3e0;color:white">Sign out
 				<!-- <ons-input input-id="textclr"  name="logout_btn" value="Sign out"></ons-input> -->
 			</ons-button>
+			</a>
 
 		</section>
 
 		<?php include "footer.php";?>
 
-		<script type="text/javascript">
-			function logOut() {
-				
-			}
-		</script>
 
 	</ons-page>
 
