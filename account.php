@@ -32,7 +32,7 @@ if(!isset($_SESSION['totalTime'])){
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 </head>
 
@@ -41,7 +41,6 @@ if(!isset($_SESSION['totalTime'])){
 	<ons-page id="bg">
 		<?php
 		$white = false;
-		$back = false;
 		include "header.php";		
 		?>
 

@@ -105,7 +105,7 @@
 												
 												<br>
 												
-												<ons-button modifier="large--quiet" style="display: inline-block;">Maybe Later</ons-button>
+												<ons-button modifier="large--quiet" style="display: inline-block;" onclick="showTemplateDialog()">Maybe Later</ons-button>
 											
 											</section>
 											</div>
@@ -125,10 +125,27 @@
 			</ons-carousel>
 			
 			
+			<template id="dialog.html">
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <p>
+        This activity has been saved for you to do later!
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+</template>
+			
+			
 			<?php include "footer.php";?>
 			
 			
 		</ons-page>
+		
+		
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		

@@ -185,12 +185,26 @@
 					</ons-dialog>
 				</ons-list>
 				
-				<ons-button modifier="large--quiet" style="display: inline-block;" onclick="location.href='activityRec.php'">Maybe Later</ons-button>
+				<ons-button modifier="large--quiet" style="display: inline-block;" onclick="showTemplateDialog()">Maybe Later</ons-button>
 				
 			</div>
 			
 			
 		</ons-card>
+		
+		<template id="dialog.html">
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <p>
+        This activity has been saved for you to do later!
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+</template>
 		
 		<?php include "footer.php";?>
 		
@@ -208,6 +222,8 @@
 	</script>
 	
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1U60JLm18jCDzO0lir9DUQozARJ4M14Q&callback=initMap"></script>
+	
+	<script type="text/javascript" src="js/eventHandling.js?version=5"></script>
 	
 </body>
 

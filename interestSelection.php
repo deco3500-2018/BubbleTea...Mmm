@@ -24,7 +24,7 @@
 		
 		<ons-page id="bg">
 			<div style="text-align: center;">
-				<h1 id="text-bold" style="text-align: center; margin-top: 10%; margin-left:5%; margin-right:5%;">Below are things we believed you might be interested in:</h1>
+				<h1 style="margin: 10%;" class="title" id="textclr">Below are things we believed you might be interested in:</h1>
 				<br>
 			</div>
 			<div>
@@ -73,11 +73,12 @@
 				
 			</div>
 			<ons-row class="user_cover">
-				<ons-button modifier="button--cta" style="display: inline-block;margin-right: auto; margin-left: auto; color:white">
-					<ons-input input-id="textclr" type="submit" onclick="submitInterest()">
+				<ons-button modifier="cta" style="display: inline-block;margin-right: auto; margin-left: auto; color:white">
+					<ons-input input-id="textclr" value="Submit" onclick="submitInterest()">
 					</ons-input>
 				</ons-button>
 			</ons-row>
+			
 			
 			<form id="interestForm" name="interestForm" action="index.php" method="post">
 				<input type="hidden" name="interest" id="hiddenInterest">

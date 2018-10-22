@@ -70,6 +70,7 @@ function submitName(){
 function submitTime(){
 	var time = document.getElementById('time').value;
 	
+	if (time>0 && time <=90){
 	$.ajax({
             url: 'session.php',
             type: 'post',
@@ -82,4 +83,26 @@ function submitTime(){
                 console.log(data);
             }
         });
+	} else {
+		alert("Please enter between 0 to 90 minutes.");
+	}
 }
+
+function showTemplateDialog() {
+  var dialog = document.getElementById('my-dialog');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('dialog.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+function hideDialog(id) {
+  document
+    .getElementById(id)
+    .hide();
+};

@@ -33,7 +33,7 @@ unset ($_SESSION["time"]);
 					<span class="list-item__subtitle" style="display: block;" id="textclr">* Please enter number of minutes</span>
 					<ons-list style="max-width: 40%; margin-right: auto; margin-left: auto; margin-top: 20px; margin-bottom: 20px;">
 						<ons-list-item modifier="noborder">
-							<ons-input type="number" name="time" id="time" min="5" max="75"></ons-input>
+							<ons-input type="number" style="width:120px" name="time" id="time" min="5" max="75" "></ons-input>
 						</ons-list-item>	
 					</ons-list>
 					
