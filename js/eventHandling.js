@@ -1,12 +1,12 @@
 function submitInterest(){
-	if ($('.selected').length==0){
+	if ($('.select').length==0){
 		alert("you must select at least 1 interest");
 		return;
 	}
 	
 	var interestArray = new Array();
 	
-	$('.selected').each(function(i, obj) {
+	$('.select').each(function(i, obj) {
 		interestArray.push($(obj).attr('id'));
 	});
 	
@@ -25,14 +25,14 @@ function submitInterest(){
 }
 
 function submitCategory(){
-	if ($('.selected').length==0){
+	if ($('.select').length==0){
 		alert("you must select at least 1 interest");
 		return;
 	}
 	
 	var interestArray = new Array();
 	
-	$('.selected').each(function(i, obj) {
+	$('.select').each(function(i, obj) {
 		interestArray.push($(obj).attr('id'));
 	});
 	
@@ -52,7 +52,8 @@ function submitCategory(){
 }
 
 $( ".interest" ).click(function() {
-	$( this ).toggleClass( "selected");
+	$( this  ).toggleClass( "select");
+	$( this  ).find(".user_thumbnail").toggleClass( "selected");
 });
 
 function submitName(){
@@ -69,6 +70,7 @@ function submitName(){
 function submitTime(){
 	var time = document.getElementById('time').value;
 	
+	if (time>0 && time <=90){
 	$.ajax({
             url: 'session.php',
             type: 'post',
@@ -81,4 +83,26 @@ function submitTime(){
                 console.log(data);
             }
         });
+	} else {
+		alert("Please enter between 0 to 90 minutes.");
+	}
 }
+
+function showTemplateDialog() {
+  var dialog = document.getElementById('my-dialog');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('dialog.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+function hideDialog(id) {
+  document
+    .getElementById(id)
+    .hide();
+};

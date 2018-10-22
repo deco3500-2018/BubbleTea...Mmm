@@ -1,6 +1,6 @@
 #bg .page__background {
 	background: #22c1c3;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #4CA1AF, #C4E0E5);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(to bottom, #43CBFF, #FFE985);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to bottom, #43CBFF, #FFE985);
 }
 
@@ -11,13 +11,14 @@
 
 #header {
 	background: #22c1c3;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to bottom, #43CBFF, #FFE985);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #43CBFF, #FFE985); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #text-bold{
 	color: white;
 	font-weight: bold;
+	font-size:1em;
 }
 
 .header-view {
@@ -52,3 +53,26 @@ a{
 	background-image: linear-gradient(to top,transparent 0px,rgba(0, 0, 0, 0) 0px);
 }
 
+.checked {
+    color: orange;
+}
+
+.back-button--material__icon {
+	fill: white;
+}
+
+#blueBtn {
+	background: #25a6d9 !important;
+}
+
+
+.back-button__icon{
+	fill:white;
+}
+
+.list-header {
+	background-color:white;
+	font-size: 1em;
+	text-transform: none;
+	margin-bottom:5%;
+}

@@ -30,7 +30,7 @@
 			</ons-list>
 
             <section style="max-width: 80%; margin: 10%; ">
-                <ons-button modifier="button large--cta" style="background-color:#22c1c3e0;color:white" onclick="submitName()">
+                <ons-button modifier=" large--cta" style="background-color:#22c1c3e0;color:white" onclick="submitName()">
                     <ons-input input-id="textclr"  name="login_btn" value="START">
 				</ons-button>
 				

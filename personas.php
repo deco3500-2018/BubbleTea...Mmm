@@ -1,6 +1,10 @@
 <?php
 include "start.php";
+if (isset($_POST['name'])){
 $_SESSION['username']= $_POST['name'];
+} else if (!isset($_SESSION['username'])) {
+	header("Location:login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,8 +26,7 @@ $_SESSION['username']= $_POST['name'];
 
 		<!-- Navbar -->
 		<ons-toolbar class="toolbar toolbar--transparent">
-
-			<div class="toolbar__center" id="textclr" style="text-transform: bold;">
+			<div class="toolbar__center" id="textclr" style="font-weight: bold;margin-top:2%;">
 				Choose a persona that best describes you!
 			</div>
 
@@ -37,7 +40,7 @@ $_SESSION['username']= $_POST['name'];
 							Persona 1: Mary
 						</div>
 						<br>
-						<img src="img/icons/015-girl-12.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+						<img src="img/icons/015-girl-12.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 						<div class="content">
 							<ons-list>
 								<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Shopping Enthusiast</ons-list-header>
@@ -47,7 +50,7 @@ $_SESSION['username']= $_POST['name'];
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 								<a href="interestSelection.php?id=1">
 									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
 									</ons-button>
 								</a>
 							</section>
@@ -73,7 +76,7 @@ $_SESSION['username']= $_POST['name'];
 						<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 							<a href="interestSelection.php?id=2">
 									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
 									</ons-button>
 								</a>
 							</section>
@@ -100,7 +103,7 @@ $_SESSION['username']= $_POST['name'];
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 								<a href="interestSelection.php?id=3">
 									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
 									</ons-button>
 								</a>
 								</section>
@@ -126,7 +129,7 @@ $_SESSION['username']= $_POST['name'];
 								<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 									<a href="interestSelection.php?id=4">
 									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="SELECT THIS PERSONA"></ons-input>
+										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
 									</ons-button>
 									</a>
 									</section>
