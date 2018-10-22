@@ -39,49 +39,112 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 
 		<div style="text-align: center; margin: auto; margin-top: 10%; max-width:800px;" id="textclr">
 
-		<h1 class="intro" style="margin-right: 10%; margin-left: 10%;">
-			Hi
+			<h1 class="intro" style="margin-right: 10%; margin-left: 10%;">
+				Hi
 
-			<?php
+				<?php
 
-			echo '' . $name . ','; 
-			?>
+				echo '' . $name . ','; 
+				?>
 
-		what would you like to explore today?
-		</p>
-	</div>
-
-		<div class="camera-view">
-			<ons-icon class="camera-icon" icon="md-face" id="textclr"></ons-icon>
+				what would you like to explore today?
+			</p>
 		</div>
 
-		<style type="text/css">
-		.camera-view {
-			width: 100%;
-			height: 30%;
-			text-align: center;
-			background-color: #cacaca;
-			display: table;
-		}
-
-		.camera-icon {
-			vertical-align: middle !important;
-			font-size: 100px;
-			opacity: 1;
-			display: table-cell;
-		}
-
-		.camera-button {
-			width: 100%;
-			height: 40%;
-			text-align: center;
-			display: table;
-		}
-	</style>
+		<p style="text-align: center;">
+			<input type="search" value="" placeholder="Search" class="search-input search-input" style="width: 80%;">
+		</p>
+		
 
 
-	<ons-card>
-</ons-card>
+		<!-- For you section --> 
+		<ons-card>
+
+
+			<div style="text-align: center; margin: auto; margin-top: 10%; max-width:800px;">
+
+				<h1 class="intro">For You</h1>
+			</div>
+
+			<div style="text-align: center; margin: auto; margin-top: 10%; ">
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/009-table.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Picnics</p>
+				</div>
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/yoga.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Yoga</p>
+				</div>
+
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/011-coffee.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Coffee</p>
+				</div>
+			</div>
+
+		</ons-card>
+
+		<!-- Popular/Trending section --> 
+		<ons-card>
+			<div style="text-align: center; margin: auto; margin-top: 10%; max-width:800px;">
+
+				<h1 class="intro">Popular Activities</h1>
+			</div>
+
+			<div style="text-align: center; margin: auto; margin-top: 10%; ">
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/017-moon.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Moon Watching</p>
+				</div>
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/006-sudoku.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Doing Puzzles</p>
+				</div>
+
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/004-painting.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Art Workshops</p>
+				</div>
+			</div>
+
+			<br>
+
+			<div style="text-align: center; margin: auto; margin-top: 10%; ">
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/012-couch.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Lazing on Couch</p>
+				</div>
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/016-nodejs.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Learning Node</p>
+				</div>
+
+				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
+					<div>
+						<img src="img/activity/020-jack-o-lantern.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
+					</div>
+					<p>Carving Pumpkins</p>
+				</div>
+			</div>
+	</ons-card>
+
+
 
 	<?php include "footer.php";?>
 
