@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2018 at 06:49 AM
+-- Generation Time: Oct 23, 2018 at 06:54 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -231,14 +231,15 @@ CREATE TABLE `userinterest` (
 
 INSERT INTO `userinterest` (`userID`, `InterestID`) VALUES
 (1, 1),
-(1, 2),
 (1, 3),
-(1, 4),
+(1, 6),
 (2, 1),
 (2, 2),
+(2, 5),
 (3, 3),
 (3, 4),
 (3, 5),
+(4, 2),
 (4, 3),
 (4, 6);
 
