@@ -58,11 +58,68 @@ if(!isset($_SESSION['totalTime'])){
 		</div>
 
 		<br>
-<!-- 		<div style="text-align: center; margin: auto;" id="textclr">
-			<p>Edit Profile Details</p>
-		</div> -->
+
 		<br>
 		<div style="width: 80%; margin-right: auto; margin-left: auto;">
+
+			<ons-list>
+				<ons-list-header modifier="nodivider">Your Interests</ons-list-header>
+				<!-- <ons-list-item modifier="nodivider">
+				</ons-list-item> -->
+
+				<ul class="list">
+					<li class="list-item list-item--tappable" modifier="nodivider">
+						<div class="list-item__left">
+							<label class="checkbox checkbox--noborder">
+								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
+								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+							</label>
+						</div>
+						<label for="s2" class="list-item__center" modifier="nodivider">
+							Interest Area
+						</label>
+					</li>
+					<li class="list-item list-item--tappable" modifier="nodivider">
+						<div class="list-item__left">
+							<label class="checkbox checkbox--noborder">
+								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
+								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+							</label>
+						</div>
+						<label for="s2" class="list-item__center">
+							Interest Area
+						</label>
+					</li>
+					<li class="list-item list-item--tappable" modifier="nodivider">
+						<div class="list-item__left">
+							<label class="checkbox checkbox--noborder">
+								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
+								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+							</label>
+						</div>
+						<label for="s2" class="list-item__center">
+							Interest Area
+						</label>
+					</li>
+					<li class="list-item list-item--tappable">
+						<div class="list-item__left">
+							<label class="checkbox checkbox--noborder">
+								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
+								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+							</label>
+						</div>
+						<label for="s2" class="list-item__center">
+							Interest Area
+						</label>
+					</li>
+				</ul>
+
+				
+
+			</ons-list>
+
+			<br>
+
 			
 			<ons-list>
 				<ons-list-header>Update username</ons-list-header>
@@ -74,16 +131,6 @@ if(!isset($_SESSION['totalTime'])){
 						<ons-button modifier="quiet">Save</ons-button>
 					</div>
 				</ons-list-item>
-
-<!-- 				<ons-list-item modifier="nodivider">
-					<div class="left">
-						<ons-input modifier="material" placeholder="Update password"></ons-input>
-					</div>
-					<div class="right">
-						<ons-button modifier="quiet">Save</ons-button>
-					</div>
-				</ons-list-item> -->
-
 			</ons-list>
 
 			<br>
@@ -107,9 +154,9 @@ if(!isset($_SESSION['totalTime'])){
 
 		<section style="max-width: 80%; margin: 10%; ">
 			<a href="login.php">
-			<ons-button modifier="large--cta" style="background-color:#22c1c3e0;color:white">Sign out
-				<!-- <ons-input input-id="textclr"  name="logout_btn" value="Sign out"></ons-input> -->
-			</ons-button>
+				<ons-button modifier="large--cta" style="background-color:#22c1c3e0;color:white">Sign out
+					<!-- <ons-input input-id="textclr"  name="logout_btn" value="Sign out"></ons-input> -->
+				</ons-button>
 			</a>
 
 		</section>
