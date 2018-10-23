@@ -65,14 +65,15 @@
 							}
 						}
 						
+						date_default_timezone_set('Australia/Brisbane');
 						
 						$sql="SELECT * 
 						FROM recommendation 
 						WHERE interestID IN ".$interestSql." AND categID IN ".$categorySql. 
 						"AND ".$_SESSION['time']." BETWEEN timeRangeStart AND timeRangeEnd 
-						AND hour(now()) >= hour(startTimeSuitable) 
-						AND hour(now()) <= hour(endTimeSuitable)";
-					
+						AND ".date('H')." >= hour(startTimeSuitable) 
+						AND ".date('H')." <= hour(endTimeSuitable)";
+						  
 						$result = mysqli_query($db,$sql);
 						
 						

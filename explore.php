@@ -67,25 +67,30 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 			</div>
 
 			<div style="text-align: center; margin: auto; margin-top: 10%; ">
+				<a href="activityRec.php?id=22">
 				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
 					<div>
 						<img src="img/activity/009-table.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
 					</div>
 					<p>Picnics</p>
 				</div>
+				</a>
+				<a href="activityRec_map.php?id=3">
 				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
 					<div>
 						<img src="img/activity/yoga.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
 					</div>
 					<p>Yoga</p>
 				</div>
-
+				</a>
+				<a href="activityRec_map.php?id=1">
 				<div style="width: 100px; height: 100px; display: inline-block; margin-right: 5px;">
 					<div>
 						<img src="img/activity/011-coffee.png" alt="picnic" style="text-align:center; width: 100px; height: 100px;">
 					</div>
 					<p>Coffee</p>
 				</div>
+				</a>
 			</div>
 
 		</ons-card>

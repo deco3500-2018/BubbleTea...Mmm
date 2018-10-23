@@ -66,7 +66,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 		}
 
 		.camera-icon {
-			vertical-align: middle !important;
+		vertical-align: middle !important;
 			font-size: 100px;
 			opacity: 1;
 			display: table-cell;
@@ -93,7 +93,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 						labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
 						datasets: [{
 							label: 'You',
-							data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 10, 2, 0, 0, 0, 0, 0],
+							data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 0, 0, 0, 0, 0, 0, 0],
 							backgroundColor: [
 							'rgba(106, 190, 226, 0.8)',
 							'rgba(106, 190, 226, 0.8)',
@@ -112,7 +112,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 						}, 
 						{
 							label: 'Other people',
-							data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 4, 8,0, 0, 0, 0, 0],
+							data: [3, 3, 3, 4, 5,5, 5, 3, 6, 7],
 							backgroundColor: [
 							'rgba(247, 182, 106, 0.8)',
 							'rgba(247, 182, 106, 0.8)',
@@ -141,7 +141,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 								ticks: {
 									beginAtZero:true,
 									min: 0,
-									max: 24,
+									max: 12,
 								}
 							}]
 						}
