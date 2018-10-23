@@ -24,7 +24,7 @@ unset ($_SESSION["time"]);
 	<?php
 				include "header.php";		
 			?>
-		<div style="text-align: center; margin-top: 45%;">
+		<div style="text-align: center; margin-top: 40%;">
 			<h1 style="margin: 10%;" class="title" id="textclr">How much free time do you have now?</h1>
 			<div>
 				<!-- dynamically create the checkbox base on interest retrieved from the database-->
@@ -36,11 +36,12 @@ unset ($_SESSION["time"]);
 							<ons-input type="number" style="width:120px" name="time" id="time" min="5" max="75" "></ons-input>
 						</ons-list-item>	
 					</ons-list>
-					
+				</div>	
+				<div>
+	
 
-
-					<ons-button modifier="cta">
-						<ons-input onclick="submitTime()" value="Submit" input-id="textclr"></ons-input>
+					<ons-button modifier=" large--cta"  onclick="submitTime()" style="width:60%;margin:auto">
+						<span>Submit</span>
 					</ons-button>
 				</form>
 			</div>

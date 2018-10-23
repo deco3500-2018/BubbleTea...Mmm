@@ -92,19 +92,19 @@
 										<div class="title" style="text-align: center;">
 											<h1>'.$row['title'].'</h1>
 										</div>
-										<br>
-										<img src="'.$row['image'].'" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+		
+										<img src="'.$row['image'].'" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 										<div class="content">
 											
-											<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+											<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 0%;">
 												
 												<a href="'.$link.'">
 												<ons-button modifier="button large--cta">
-													<ons-input input-id="textclr" name="login_btn" value="SELECT THIS ACTIVITY"></ons-input>
+													<span>Select this activity</span>
 												</ons-button>
 												</a>
 												
-												<br>
+			
 												
 												<ons-button modifier="large--quiet" style="display: inline-block;" onclick="showTemplateDialog()">Maybe Later</ons-button>
 											

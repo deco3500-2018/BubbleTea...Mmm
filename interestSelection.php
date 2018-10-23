@@ -27,8 +27,7 @@
 				include "header.php";		
 			?>
 			<div style="text-align: center;">
-				<h1 style="margin: 10%;" class="title" id="textclr">Select the categories that you are interested in:</h1>
-				<br>
+				<h1 style="margin: 8%;" class="title" id="textclr">Select the categories that you are interested in:</h1>
 			</div>
 			<div>
 				
@@ -77,9 +76,8 @@
 				
 			</div>
 			<ons-row class="user_cover">
-				<ons-button modifier="cta" style="display: inline-block;margin-right: auto; margin-left: auto; color:white">
-					<ons-input input-id="textclr" value="Submit" onclick="submitInterest()">
-					</ons-input>
+				<ons-button modifier=" large--cta" style="display: inline-block;margin-right: auto; margin-left: auto; color:white" onclick="submitInterest()">
+				<span class="noMargin">Submit</span>
 				</ons-button>
 			</ons-row>
 			

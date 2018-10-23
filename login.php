@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=3">
 </head>
 
 <body>
@@ -20,18 +20,18 @@
 
 	<!-- Login Section --> 
 		<div style="text-align: center; margin: auto; margin-top: 10%; max-width:800px;">
-			<img src="img/logoWhite.png" style="width:80%; margin-top:50%"/>
+			<img src="img/logoWhite.png" style="width:80%; margin-top:40%"/>
 			<br>
 
 			<ons-list style="margin: 10%;background-color:#ffffff87;border-radius:5px;">
 				<ons-list-item modifier="noborder">
-					<ons-input placeholder="What's your name? " id="name"></ons-input>
+					<ons-input placeholder="What's your name? " id="name" style="width:120%"></ons-input>
 				</ons-list-item>
 			</ons-list>
 
             <section style="max-width: 80%; margin: 10%; ">
-                <ons-button modifier=" large--cta" style="background-color:#22c1c3e0;color:white" onclick="submitName()">
-                    <ons-input input-id="textclr"  name="login_btn" value="START">
+                <ons-button modifier=" large--cta" style="background-color:#25a6d9;color:white" onclick="submitName()">
+                    <span class="noMargin">START</span>
 				</ons-button>
 				
 			</section>
@@ -53,7 +53,7 @@
 			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 	</script>
 
-	<script type="text/javascript" src="js/eventHandling.js"></script>
+	<script type="text/javascript" src="js/eventHandling.js?version=2"></script>
 
 </body>
 

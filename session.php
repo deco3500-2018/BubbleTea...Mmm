@@ -16,6 +16,11 @@
 		echo $_POST['callAddCategory'];
     }
 	
+	if (isset($_POST['callAddName'])) {
+		$_SESSION["username"] = $_POST['callAddName'];
+		echo $_POST['callAddName'];
+    }
+	
 	if (isset($_POST['callgetRecomLocation'])) {
 		$sql = "SELECT * FROM recommendationdetails WHERE recomID = ".$_POST['callgetRecomLocation'];
 		$result = mysqli_query($db,$sql);

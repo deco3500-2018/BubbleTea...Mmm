@@ -70,12 +70,15 @@
 						
 						var myLatLng = {lat: -27.499940, lng: 153.015218};
 						
+						var image = 'img/cpmaps-bluedot-icon.png';
+  
 						
 						var marker = new google.maps.Marker({
 							map: map,
 							zoom: 1,
 							animation: google.maps.Animation.DROP,
 							position:myLatLng,
+							icon: image
 						});
 						
 						$.ajax({

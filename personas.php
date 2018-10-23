@@ -1,8 +1,7 @@
 <?php
 include "start.php";
-if (isset($_POST['name'])){
-$_SESSION['username']= $_POST['name'];
-} else if (!isset($_SESSION['username'])) {
+
+if (!isset($_SESSION['username'])) {
 	header("Location:login.php");
 }
 ?>
@@ -15,7 +14,7 @@ $_SESSION['username']= $_POST['name'];
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2">
 </head>
 
 <body>
@@ -37,21 +36,21 @@ $_SESSION['username']= $_POST['name'];
 			<ons-carousel-item>
 					<ons-card id="persona1">
 						<div class="title">
-							Persona 1
+							Persona 1:
 						</div>
 						<br>
 						<img src="img/icons/015-girl-12.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 						<div class="content">
 							<ons-list>
 								<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Shopping Enthusiast</ons-list-header> -->
-								<ons-list-item modifier="nodivider">- Extroverted</ons-list-item>
-								<ons-list-item modifier="nodivider">- Loves people and animals</ons-list-item>
+								<ons-list-item modifier="nodivider">Extroverted, loves people and animals.</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 								<a href="interestSelection.php?id=1">
-									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
-									</ons-button>
+								<ons-button modifier=" large--cta" style="background-color:#25a6d9;color:white">
+									<span class="noMargin">Select this Persona</span>
+								</ons-button>
+
 								</a>
 							</section>
 						</div>
@@ -66,19 +65,17 @@ $_SESSION['username']= $_POST['name'];
 						Persona 2:
 					</div>
 					<br>
-					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 					<div class="content">
 						<ons-list>
 							<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Athletic</ons-list-header> -->
-							<ons-list-item modifier="nodivider">- Hates crowded areas</ons-list-item>
-							<ons-list-item modifier="nodivider">- Admirer of fine arts</ons-list-item>
-							<ons-list-item modifier="nodivider">- Prefers to stay at home rather than go out</ons-list-item>
+							<ons-list-item modifier="nodivider">Hates crowded areas, admirer of fine arts.</ons-list-item>
 						</ons-list>
 						<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 							<a href="interestSelection.php?id=2">
-									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
-									</ons-button>
+									<ons-button modifier=" large--cta" style="background-color:#25a6d9;color:white">
+									<span class="noMargin">Select this Persona</span>
+								</ons-button>
 								</a>
 							</section>
 						</div>
@@ -93,19 +90,17 @@ $_SESSION['username']= $_POST['name'];
 							Persona 3:
 						</div>
 						<br>
-						<img src="img/icons/031-man-6.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+						<img src="img/icons/031-man-6.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 						<div class="content">
 							<ons-list>
 								<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Art Enthusiast</ons-list-header> -->
-								<ons-list-item modifier="nodivider">- Loves to travel and experience life</ons-list-item>
-								<ons-list-item modifier="nodivider">- Energetic and participates in physical activity</ons-list-item>
-								
+								<ons-list-item modifier="nodivider">Loves to travel, energetic and participates in physical activity.</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 								<a href="interestSelection.php?id=3">
-									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
-									</ons-button>
+									<ons-button modifier=" large--cta" style="background-color:#25a6d9;color:white">
+									<span class="noMargin">Select this Persona</span>
+								</ons-button>
 								</a>
 								</section>
 							</div>
@@ -120,18 +115,17 @@ $_SESSION['username']= $_POST['name'];
 								Persona 4:
 							</div>
 							<br>
-							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 							<div class="content">
 								<ons-list>
 									<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Coffee Lover</ons-list-header> -->
-									<ons-list-item modifier="nodivider">- Has short periods of free time</ons-list-item>
-									<ons-list-item modifier="nodivider">- Home life is hectic and wants to get outside</ons-list-item>
+									<ons-list-item modifier="nodivider">Has short periods of free time, home life is hectic and wants to get outside.</ons-list-item>
 								</ons-list>
 								<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 									<a href="interestSelection.php?id=4">
-									<ons-button modifier="button large--cta">
-										<ons-input input-id="textclr" type="submit" name="login_btn" value="Select this Persona"></ons-input>
-									</ons-button>
+									<ons-button modifier=" large--cta" style="background-color:#25a6d9;color:white">
+									<span class="noMargin">Select this Persona</span>
+								</ons-button>
 									</a>
 									</section>
 								</div>

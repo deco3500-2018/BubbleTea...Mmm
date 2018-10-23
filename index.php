@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 		include "header.php";		
 		?>
 
-		<div style="text-align: center; margin: auto;  max-width:800px;" id="textclr">
+		<div style="text-align: center; margin: auto;" id="textclr">
 
 			<h1 class="intro">
 				Welcome back
@@ -53,7 +53,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 		</div>
 
 		<div>
-			<img src="img/tired.png" style="margin:auto; display: block;"/>
+			<img src="img/tired.png" width="50%" style="margin:auto; display: block; "/>
 		</div>
 
 		<style type="text/css">
@@ -84,16 +84,18 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 	<ons-card>
 		<!-- Graph section --> 
 		<section>
-			<canvas id="myChart" width="80" height="65"></canvas>
+			<canvas id="myChart" width="80" height="50"></canvas>
 			<script>
+				function createGraph(time){
 				var ctx = document.getElementById("myChart").getContext('2d');
+				var time = time;
 				var myChart = new Chart(ctx, {
 					type: 'bar',
 					data: {
 						labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
 						datasets: [{
 							label: 'You',
-							data: [0, 0, <?php echo ($_SESSION['totalTime']) ?>, 0, 0, 0, 0, 0, 0, 0],
+							data: [0, 0, time , 0, 0, 0, 0, 0, 0, 0],
 							backgroundColor: [
 							'rgba(106, 190, 226, 0.8)',
 							'rgba(106, 190, 226, 0.8)',
@@ -147,7 +149,9 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 						}
 					}
 				});
+				}
 			</script>
+			
 		</section>
 	</ons-card>
 	
@@ -189,7 +193,9 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
      'showTemplateDialog();',
      '</script>'
 ;
-}?>
+}
+echo '<script>createGraph('.$_SESSION['totalTime'].')</script>'
+?>
 
 </ons-page>
 

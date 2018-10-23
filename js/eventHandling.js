@@ -62,9 +62,18 @@ function submitName(){
 		 alert("Must input a name");
 		 return;
 	 }
-	 
-	$("#hiddenName").val(username);
-	document.getElementById("nameForm").submit();
+	 $.ajax({
+            url: 'session.php',
+            type: 'post',
+            data: {"callAddName": username},
+            success: function (data) {
+				document.location.href = "personas.php";
+            },
+            error: function (data) {
+                console.log("error");
+                console.log(data);
+            }
+        });
 }
 
 function submitTime(){

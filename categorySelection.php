@@ -59,9 +59,9 @@ include "error.php";
 				?>
 			</div>
 				<ons-row class="user_cover">
-				<ons-button modifier="cta" onclick="submitCategory()" style="display: inline-block; margin-right: auto; margin-left: auto;">
-					<ons-input input-id="textclr"  name="login_btn" value="Submit">
-				</ons-button>
+				<ons-button modifier=" large--cta"  onclick="submitCategory()" style="width:80%;margin:auto">
+						<span>Submit</span>
+					</ons-button>
 				</ons-row>
 				
 			<form id="interestForm" name="interestForm" action="activitySelection.php" method="post">

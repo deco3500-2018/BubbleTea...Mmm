@@ -124,7 +124,7 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 
 		<section style="max-width: 80%; margin: 10%; ">
 			<a href="login.php">
-				<ons-button modifier="large--cta" style="background-color:#22c1c3e0;color:white">Sign out
+				<ons-button modifier="large--cta" style="background-color:#25a6d9;color:white">Sign out
 					<!-- <ons-input input-id="textclr"  name="logout_btn" value="Sign out"></ons-input> -->
 				</ons-button>
 			</a>
