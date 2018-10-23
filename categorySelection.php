@@ -30,7 +30,7 @@ include "error.php";
 	<!-- dynamically create the checkbox base on interest retrieved from the database-->
 				<?php
 				
-					$colourArray = array("#284754", "#3B83A3", "#F7B66A", "#F78360", "#6ABEE2","#964713");
+					$colourArray = array("#284754", "#3B83A3", "#00A79D", "#F78360", "#6ABEE2","#964713");
 				
 					if (isset($_SESSION['time'])){
 
