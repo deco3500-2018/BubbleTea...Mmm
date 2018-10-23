@@ -2,23 +2,11 @@
 include "start.php";
 include "error.php";
 
-if (!isset($_SESSION['interest'])){
-	$_SESSION['interest'] = $_POST['interest'];
-}
-
 if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 	$name = $_SESSION['username'];
 } else{
 	header("Location:login.php");
 }
-
-if(!isset($_SESSION['totalTime'])){
-	$_SESSION['totalTime'] = 0;
-} else if (isset($_SESSION["time"])){
-	$_SESSION['totalTime'] = round( $_SESSION['totalTime'] + ($_SESSION['time']/60)); 
-	unset ($_SESSION["time"]);
-}
-
 ?>
 
 
@@ -66,52 +54,34 @@ if(!isset($_SESSION['totalTime'])){
 				<ons-list-header modifier="nodivider">Your Interests</ons-list-header>
 				<!-- <ons-list-item modifier="nodivider">
 				</ons-list-item> -->
-
 				<ul class="list">
-					<li class="list-item list-item--tappable" modifier="nodivider">
-						<div class="list-item__left">
-							<label class="checkbox checkbox--noborder">
-								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
-								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
-							</label>
-						</div>
-						<label for="s2" class="list-item__center" modifier="nodivider">
-							Interest Area
-						</label>
-					</li>
-					<li class="list-item list-item--tappable" modifier="nodivider">
-						<div class="list-item__left">
-							<label class="checkbox checkbox--noborder">
-								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
-								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
-							</label>
-						</div>
-						<label for="s2" class="list-item__center">
-							Interest Area
-						</label>
-					</li>
-					<li class="list-item list-item--tappable" modifier="nodivider">
-						<div class="list-item__left">
-							<label class="checkbox checkbox--noborder">
-								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
-								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
-							</label>
-						</div>
-						<label for="s2" class="list-item__center">
-							Interest Area
-						</label>
-					</li>
-					<li class="list-item list-item--tappable">
-						<div class="list-item__left">
-							<label class="checkbox checkbox--noborder">
-								<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
-								<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
-							</label>
-						</div>
-						<label for="s2" class="list-item__center">
-							Interest Area
-						</label>
-					</li>
+				<?php
+					if (isset($_SESSION['interest'])){
+						$interest = json_decode($_SESSION['interest']);
+						
+						for ($y = 0; $y < sizeof($interest); $y++) {
+						
+							$sql = "SELECT * FROM interest WHERE interestID = ".$interest[$y];
+							$result = mysqli_query($db,$sql);
+							$row = mysqli_fetch_assoc($result);
+							echo '<li class="list-item list-item--tappable" modifier="nodivider">
+									<div class="list-item__left">
+										<label class="checkbox checkbox--noborder">
+											<input id="s2" type="checkbox" class="checkbox__input checkbox--noborder__input" checked>
+											<div class="checkbox__checkmark checkbox--noborder checkbox--noborder__checkmark"></div>
+										</label>
+									</div>
+									<label for="s2" class="list-item__center" modifier="nodivider">
+										'.$row['name'].'
+									</label>
+								</li>';
+						}
+						
+					}else{
+						header("Location:login.php");
+					}
+					?>
+				
 				</ul>
 
 				

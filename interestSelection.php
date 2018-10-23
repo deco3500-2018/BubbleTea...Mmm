@@ -23,11 +23,15 @@
 	<body>
 		
 		<ons-page id="bg">
+		<?php
+				include "header.php";		
+			?>
 			<div style="text-align: center;">
 				<h1 style="margin: 10%;" class="title" id="textclr">Below are things we believed you might be interested in:</h1>
 				<br>
 			</div>
 			<div>
+				
 				<!-- dynamically create the checkbox base on interest retrieved from the database-->
 				<?php
 				include "start.php";

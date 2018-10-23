@@ -175,7 +175,7 @@
 					<ons-dialog id="my-dialog">
 						<div style="text-align: center; padding: 10px;">
 							<p>
-								This is a simple dialog!
+								 This activity has been saved for you to do later!
 							</p>
 							
 							<p>

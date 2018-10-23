@@ -66,7 +66,7 @@ $_SESSION['username']= $_POST['name'];
 						Persona 2: John
 					</div>
 					<br>
-					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 					<div class="content">
 						<ons-list>
 							<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Athletic</ons-list-header>
@@ -92,7 +92,7 @@ $_SESSION['username']= $_POST['name'];
 							Persona 3: Jimmy 
 						</div>
 						<br>
-						<img src="img/icons/031-man-6.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+						<img src="img/icons/031-man-6.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 						<div class="content">
 							<ons-list>
 								<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Art Enthusiast</ons-list-header>
@@ -119,7 +119,7 @@ $_SESSION['username']= $_POST['name'];
 								Persona 4: Jessica
 							</div>
 							<br>
-							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 							<div class="content">
 								<ons-list>
 									<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Coffee Lover</ons-list-header>
