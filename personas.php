@@ -37,15 +37,15 @@ $_SESSION['username']= $_POST['name'];
 			<ons-carousel-item>
 					<ons-card id="persona1">
 						<div class="title">
-							Persona 1: Mary
+							Persona 1
 						</div>
 						<br>
 						<img src="img/icons/015-girl-12.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 						<div class="content">
 							<ons-list>
-								<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Shopping Enthusiast</ons-list-header>
-								<ons-list-item modifier="nodivider">A big fan of checking out new boutiques</ons-list-item>
-								<ons-list-item modifier="nodivider">Keeping on top of trends is a must</ons-list-item>
+								<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Shopping Enthusiast</ons-list-header> -->
+								<ons-list-item modifier="nodivider">- Extroverted</ons-list-item>
+								<ons-list-item modifier="nodivider">- Loves people and animals</ons-list-item>
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 								<a href="interestSelection.php?id=1">
@@ -63,15 +63,16 @@ $_SESSION['username']= $_POST['name'];
 			<ons-carousel-item>
 				<ons-card id="persona2">
 					<div class="title">
-						Persona 2: John
+						Persona 2:
 					</div>
 					<br>
-					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+					<img src="img/icons/001-boy.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 					<div class="content">
 						<ons-list>
-							<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Athletic</ons-list-header>
-							<ons-list-item modifier="nodivider">Enjoys outdoor activities</ons-list-item>
-							<ons-list-item modifier="nodivider">A sporty individual who prefers to keep on the move</ons-list-item>
+							<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Athletic</ons-list-header> -->
+							<ons-list-item modifier="nodivider">- Hates crowded areas</ons-list-item>
+							<ons-list-item modifier="nodivider">- Admirer of fine arts</ons-list-item>
+							<ons-list-item modifier="nodivider">- Prefers to stay at home rather than go out</ons-list-item>
 						</ons-list>
 						<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 							<a href="interestSelection.php?id=2">
@@ -89,16 +90,16 @@ $_SESSION['username']= $_POST['name'];
 				<ons-carousel-item>
 					<ons-card id="persona3">
 						<div class="title">
-							Persona 3: Jimmy 
+							Persona 3:
 						</div>
 						<br>
-						<img src="img/icons/031-man-6.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+						<img src="img/icons/031-man-6.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 						<div class="content">
 							<ons-list>
-								<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Art Enthusiast</ons-list-header>
-								<ons-list-item modifier="nodivider">Can usually be found in art museums</ons-list-item>
-								<ons-list-item modifier="nodivider">Loves going for fine art workshops</ons-list-item>
-								<ons-list-item modifier="nodivider">Interested in anything and everything artistic</ons-list-item>
+								<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Art Enthusiast</ons-list-header> -->
+								<ons-list-item modifier="nodivider">- Loves to travel and experience life</ons-list-item>
+								<ons-list-item modifier="nodivider">- Energetic and participates in physical activity</ons-list-item>
+								
 							</ons-list>
 							<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 								<a href="interestSelection.php?id=3">
@@ -116,15 +117,15 @@ $_SESSION['username']= $_POST['name'];
 					<ons-carousel-item>
 						<ons-card id="persona4">
 							<div class="title">
-								Persona 4: Jessica
+								Persona 4:
 							</div>
 							<br>
-							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"><br><br>
+							<img src="img/icons/014-girl-11.png" alt="Persona Icon" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"><br><br>
 							<div class="content">
 								<ons-list>
-									<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Coffee Lover</ons-list-header>
-									<ons-list-item modifier="nodivider">Loves checking out new coffeeshops</ons-list-item>
-									<ons-list-item modifier="nodivider">Coffee is always a thing</ons-list-item>
+									<!--<ons-list-header class="list-item__subtitle" style="text-align: center; font-weight: bolder;">Coffee Lover</ons-list-header> -->
+									<ons-list-item modifier="nodivider">- Has short periods of free time</ons-list-item>
+									<ons-list-item modifier="nodivider">- Home life is hectic and wants to get outside</ons-list-item>
 								</ons-list>
 								<section style="max-width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 10%;">
 									<a href="interestSelection.php?id=4">
