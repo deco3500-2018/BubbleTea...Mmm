@@ -27,7 +27,7 @@
 				include "header.php";		
 			?>
 			<div style="text-align: center;">
-				<h1 style="margin: 10%;" class="title" id="textclr">Below are things we believed you might be interested in:</h1>
+				<h1 style="margin: 10%;" class="title" id="textclr">Select the categories that you are interested in:</h1>
 				<br>
 			</div>
 			<div>
@@ -35,7 +35,7 @@
 				<!-- dynamically create the checkbox base on interest retrieved from the database-->
 				<?php
 				include "start.php";
-					$colourArray = array("#284754", "#3B83A3", "#F7B66A", "#F78360", "#6ABEE2");
+					$colourArray = array("#284754", "#3B83A3", "#00A79D", "#F78360", "#6ABEE2");
 					$id = $_GET['id'];
 					// to be retrieved from the database
 					$_SESSION['user'] = $id;
