@@ -187,14 +187,13 @@ if(isset($_SESSION['username'])&& isset($_SESSION['interest'])){
 		<?php if(!isset($_SESSION['totalTime'])){
 	$_SESSION['totalTime'] = 0;
 } else if (isset($_SESSION["time"])){
-	$_SESSION['totalTime'] = $_SESSION['totalTime'] + round($_SESSION['time']/60); 
+	$_SESSION['totalTime'] = $_SESSION['totalTime'] + $_SESSION['time']/60; 
 	unset ($_SESSION["time"]);
 	echo '<script type="text/javascript">',
      'showTemplateDialog();',
-     '</script>'
-;
+     '</script>';
 }
-echo '<script>createGraph('.$_SESSION['totalTime'].')</script>'
+echo '<script>createGraph('.round($_SESSION['totalTime'],2).')</script>'
 ?>
 
 </ons-page>

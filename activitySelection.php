@@ -76,7 +76,7 @@
 						  
 						$result = mysqli_query($db,$sql);
 						
-						
+						if (mysqli_num_rows($result) != 0){
 						
 						while ($row = mysqli_fetch_assoc($result)) {
 							$link;
@@ -114,6 +114,9 @@
 								</form>
 							</ons-carousel-item>
 							';
+						}
+						} else {
+							echo '<p style="padding: 10px;">Sorry, no recommendation has been found based on your requirements.</p>';
 						}
 						
 					} else{

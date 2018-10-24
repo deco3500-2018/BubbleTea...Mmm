@@ -79,7 +79,7 @@ function submitName(){
 function submitTime(){
 	var time = document.getElementById('time').value;
 	
-	if (time>0 && time <=90){
+	if (time>=10 && time <=90){
 	$.ajax({
             url: 'session.php',
             type: 'post',
@@ -93,7 +93,7 @@ function submitTime(){
             }
         });
 	} else {
-		alert("Please enter between 0 to 90 minutes.");
+		alert("Please enter between 10 to 90 minutes.");
 	}
 }
 

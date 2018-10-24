@@ -59,7 +59,7 @@ unset ($_SESSION["time"]);
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
 		</script>
 		
-		<script type="text/javascript" src="js/eventHandling.js?version=3"></script>
+		<script type="text/javascript" src="js/eventHandling.js?version=4"></script>
 
 </body>
 
