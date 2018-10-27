@@ -83,3 +83,12 @@ Please note that both the vendor and data scraping folder are not currently used
 -  **tutorial.php** - PHP script for running the tutorial of the application
 
 ***
+
+## Promotional Materials
+### Poster
+![poster](https://i.imgur.com/Toy037G.png)
+
+### Brochure/User Guide
+![brochure](https://i.imgur.com/MgmKCYp.png)
+
+***
