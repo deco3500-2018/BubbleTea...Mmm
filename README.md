@@ -34,19 +34,19 @@ The BubbleTea...Mmm WIKI for In the Moment contains multiple pages documenting t
 
 #### Progress Documentation
 **Week 8**
--   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research))
--   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design))
+-   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research)
+-   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design)
  
 **Week 9 & Mid-Sem Break**
--   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research))
--   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design))
--   [UX]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX))
--   [Development]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development))
+-   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research)
+-   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design)
+-   [UX]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX)
+-   [Development]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development)
   
 **Week 10**
--   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research))
--   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design))
--   [Development]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development))
+-   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research)
+-   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design)
+-   [Development]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development)
 
 **Week 11**
 - [Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Design)
@@ -137,6 +137,12 @@ Please note that both the vendor and data scraping folder are not currently used
 -  **tutorial.php** - PHP script for running the tutorial of the application
 
 ***
+
+## Deployment Guide & Usage Instructions
+### Deployment & Installation Guide
+
+### Using the Application (Walkthrough)
+
 
 ## Promotional Materials
 ### Poster
