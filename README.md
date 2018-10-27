@@ -14,6 +14,8 @@ Workaholics were selected as the primary target audience as they are a time poor
 
 In the Moment is an application that is built for users' personal gain, as it uses a dynamic recommendation process to help users find more activities they can do in a much shorter time. The key focus of In the Moment is that it considers how much free time the user has on hand in that particular spot in time. The system considers the time that they input against the time that activities generally take and automatically filters out options that don't fit the criteria. The system repeats this filtering again with the user's location by considering where the user is and where the recommended activities might be. For activities that are too far away, the system will not include it in the list of recommendations. 
 
+Having narrowed down a set of results to recommend to the user, when the user selects their preferred option the system will present them with an activity card. Depending on the activity type, this card will contain information that introduces what the activity is about. For example, if it is an activity that requires instructions, the card will include quick links to popular introductory level tutorials to give the user a low barrier of entry starting point. 
+
 The original project proposal for In the Moment can be read [here](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Proposal).
 
 ### Documentation Structure
