@@ -34,19 +34,19 @@ The BubbleTea...Mmm WIKI for In the Moment contains multiple pages documenting t
 
 #### Progress Documentation
 **Week 8**
--   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research)
--   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design)
+-   [Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research)
+-   [Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design)
  
 **Week 9 & Mid-Sem Break**
--   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research)
--   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design)
--   [UX]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX)
--   [Development]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development)
+-   [Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research)
+-   [Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design)
+-   [UX](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX)
+-   [Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development)
   
 **Week 10**
--   [Research]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research)
--   [Design]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design)
--   [Development]([https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development)
+-   [Research](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research])
+-   [Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design])
+-   [Development](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development])
 
 **Week 11**
 - [Design](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Design)
@@ -142,6 +142,45 @@ Please note that both the vendor and data scraping folder are not currently used
 ### Deployment & Installation Guide
 
 ### Using the Application (Walkthrough)
+Given that installation and deployment of the source code was completed successfully, when using the application, follow these main steps to go through the use process of In the Moment. The application is designed with one ‘highlight’ feature, which is the recommendation process, and a series of trivial elements to enhance user experience, such as the comparison graph on the ‘home’ page, and the ‘explore’ and ‘account’ pages.
+
+**1.  Pre-application  instructions**  
+   1. If deploying the application through UQ server, the user will need to first enter their UQ login details in order to get access to the rest of the application’s pages. 
+   
+      OR       
+      
+   2.  If deploying from an external server, the user can skip having to enter their UQ login as there should be no other pre-application screens.
+    
+
+2.  **Login** - Once step 1 has been completed, the user will be shown a login screen that asks them to input their name. Without successfully submitting this screen, the user will not be able to access any of the other pages in the app as there is no valid session recognised by the system. Once the user enters their name, and submits the form, they will be redirected to a tutorial page.
+    
+3.  **Tutorial** - In the Moment has a on-boarding tutorial designed to quickly introduce users to the process they will follow when they do start using the application’s recommendation system. The tutorial page affords users two options:
+	1.  **Read through tutorial** - the tutorial is presented in a card format that users can click through. Once the user has read through the tutorial, and clicked ‘finish’, they will be directed to the persona selection page.
+	2. **Skip** - users are given the option to skip the tutorial if they believe that they should be able to use the app without it. On clicking the button to skip, users will be directed to the persona selection page.
+    
+4.  **Persona Selection** - The persona selection page essentially offers users a selection of personas presented in a carousel card format. Users will be required to choose one before they can be directed to the next step of the setup process. Once a persona has been selected, the user will be forwarded to the interest selection page.
+    
+5.  **Interest Selection** - The interest selection page the last step of the setup process and is where users are presented with a number of ‘interest’ boxes which are generated dynamically depending on the user’s selected persona from the previous page. Users are allowed to choose between minimum one to all the displayed options. Once the interest boxes have been selected, users will need to submit their selection through a submit button. Once submitted, users will be taken to the index page.
+    
+6. **Home (‘index’ page)** - The home page of the application, the main element here is the graph display that shows a vertical bar graph that displays the total free time the user has spent in a day (represented by the blue columns) compared to the average free time that others have spent (represented in the orange columns). The home page is essentially the starting point of the application, post-setup. This is where users will first see the global footer bar, which contains 3 main elements - home, start and explore. The home button redirects to the home page, the explore button redirects to the explore page and the start button is what users need to press in order to start the recommendation process.
+
+8. Recommendation Process
+
+   1.  Start
+    
+   10.  Input time
+    
+   11.  Select activity categories
+    
+   12.  Browse through provided options
+    
+   13.  Viewing selected option  
+
+   14.  Time tracker
+    
+15.  Explore -
+    
+16.  Account (Logout)
 
 
 ## Promotional Materials
