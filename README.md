@@ -19,26 +19,25 @@ Having narrowed down a set of results to recommend to the user, when the user se
 The original project proposal for In the Moment can be read [here](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Proposal).
 
 ### Documentation Structure & Process Links
-The BubbleTea...Mmm WIKI for In the Moment contains multiple pages documenting the design and build process of the application from Week 8 through to Week 13. Apart from the weekly breakdown of the team’s processes, the WIKI also includes a number of pages that are more relevant to the project as a whole. These pages fall under the ‘Key Pages’ and ‘Specifications’ category and contains documents such as the project proposal and the specification sheets from technical and UI perspectives. The documentation structure has been included below, with the links to each relevant page tied to its respective heading. For a short breakdown (in bullet point format) of what was the progress highlights for each section each week, refer to the WIKI (Home)[[https://github.com/deco3500-2018/BubbleTea...Mmm/wiki](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki)] page
+The BubbleTea...Mmm WIKI for In the Moment contains multiple pages documenting the design and build process of the application from Week 8 through to Week 13. Apart from the weekly breakdown of the team’s processes, the WIKI also includes a number of pages that are more relevant to the project as a whole. These pages fall under the ‘Key Pages’ and ‘Specifications’ category and contains documents such as the project proposal and the specification sheets from technical and UI perspectives. The documentation structure has been included below, with the links to each relevant page tied to its respective heading. For a short breakdown (in bullet point format) of what was the progress highlights for each section each week, refer to the WIKI [Home](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki) page
 
 #### Key Pages
-[Project Proposal](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Proposal), [Design Process Overview](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Design-Process-Overview)
+[Project Proposal](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Proposal), [Design Process Overview](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Design-Process-Overview), [Showcase](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-13-Showcase)
     
 #### Specifications
 [Technical Specification](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Technical-Spec-Sheet), [UI Specification](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/UI-Specification)
     
-
 #### Research
 [Week 8](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Research), [Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Research), [Week 10](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Research)
 
 #### Design
-[Week 8](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design), [Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design), [Week 10](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Design), [Week 12](), [Week 13]()
+[Week 8](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-8---Design), [Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-Design), [Week 10](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Design), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Design), [Week 12](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-12-Design), [Week 13](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-13-Design)
 
 #### UX
-[Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-UX), [Week 12](), [Week 13]()
+[Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-UX), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-UX)
 
 #### Development
-[Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development), [Week 10](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Development), [Week 12](), [Week 13]()
+[Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development), [Week 10](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Development), [Week 12](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-12-Development), [Week 13](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-13-Development)
 
 ***
 
@@ -119,6 +118,11 @@ Please note that both the vendor and data scraping folder are not currently used
 
 ## Deployment Guide & Usage Instructions
 ### Deployment & Installation Guide
+In the Moment is a progressive web app, the deployment process is very similar to deploying a traditional website. It is recommended that the developers first test the app on their local server and then transfer it to the actual server. Below is a guide for developers to first deploy the site on their own environment and then the live server. 
+
+#### For Development & Testing
+
+#### For Going Live
 
 ### Using the Application (Walkthrough)
 Given that installation and deployment of the source code was completed successfully, when using the application, follow these main steps to go through the use process of In the Moment. The application is designed with one ‘highlight’ feature, which is the recommendation process, and a series of trivial elements to enhance user experience, such as the comparison graph on the ‘home’ page, and the ‘explore’ and ‘account’ pages.
@@ -142,23 +146,23 @@ Given that installation and deployment of the source code was completed successf
     
 **6. Home (‘index’ page)** - The home page of the application, the main element here is the graph display that shows a vertical bar graph that displays the total free time the user has spent in a day (represented by the blue columns) compared to the average free time that others have spent (represented in the orange columns). The home page is essentially the starting point of the application, post-setup. This is where users will first see the global footer bar, which contains 3 main elements - home, start and explore. The home button redirects to the home page, the explore button redirects to the explore page and the start button is what users need to press in order to start the recommendation process.
 
-**8. Recommendation Process**
+**7. Recommendation Process**
 
-   1.  Start
+   1.  **Start** - to start the recommendation process, users will need to first tap on the blue start button located in the middle of the footer bar. 
     
-   10.  Input time
+   10.  **Input time**  - after the uses selects ‘start’, they will be directed to a page that asks them to input a number between 10-300 minutes into a textfield. After inputting a number and entering the form, the user will be taken to a second page which asks them to select activity categories that interests them. 
     
-   11.  Select activity categories
+   11.  **Select activity categories** - the category selection page shows the users various activity categories that they can select, depending on what they feel like doing. The category selection allows the user to select more than one category. Once users have selected their category(s), they will have to submit their selection in order to progress to the next step, which is where activity recommendations are presented to them.
     
-   12.  Browse through provided options
-    
-   13.  Viewing selected option  
+   12.  **Browse through provided options** - based on the persona selected, the current time of the day, the current amount of free time the user has and the activity categories selected, the system will compile a pool of recommendations to present to the user in a card format. The user is able to swipe through these cards and select an activity that interests them. Upon selection of a particular activity, they will be taken to a more detailed activity card dedicated to just that activity. If there is currently no activity that can fulfil the criteria, a message will be shown to the user explaining to them that currently no suitable activity can be found for them. 
 
-   14.  Time tracker
+   13.  **Viewing selected option** - in the activity card, the user will see an image representative of the activity, or a map if the activity is location based, at the top section of the card. If the activity requires instructions, the card will also contain quick links to tutorials to give users a ‘quick start’ directive. Having finished the activity, users can click back to the home page.
+
+   14.  **Time tracker** - back on the index page, the system will register that the user has spent the time they input completing the activity. This is then communicated to the user through a dialog popup. The graph on the homepage will adjust the appropriate column to reflect the increased free time the user has spent. 
     
-**15.  Explore -**
+**8.  Explore** - Users can go to the explore page to view recommendations that they might like but are not recommended using the full recommendation process (e.g. not considering the current time or the user’s current amount of free time). The page also displays activities that that have been trending and pursued by other people recently. 
     
-**16.  Account (Logout)**
+**9.  Account (Logout)** - Should the user wish to log out of the application, they can tap the global account icon on the top right corner of the page and it will take them to the account page. This page has a logout button at the bottom for users to click in order to log themselves out of the app. 
 
 
 ## Promotional Materials
