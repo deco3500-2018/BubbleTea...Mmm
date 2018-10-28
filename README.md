@@ -127,48 +127,86 @@ Once XAMPP has been downloaded and installed, go to XAMPP folder within your com
 
 In the Moment also requires a relational database server and XAMPP also includes phpmyadmin, an administration tool for MySQL. To access it, open wamp, navigate to http://localhost/phpmyadmin and log in through root account. Once the phpmyadmin dashboard is opened, create a new database and name it *inthemoment*. Then click on import on the header navigation and choose a file to import. In the Moment source code, there is a file called inthemoment.sql, import that file. It includes all necessary queries to set up the required tables and data. 
 
+![import to database](https://i.imgur.com/6igS3tH.png)
+
+Once the database has been set up, it is important that you change the login credentials within start.php to your own account and password to your phpmyadmin dashboard. 
+
+![database connection](https://i.imgur.com/KXmpLlH.png)
+
+Once the setup has been completed,  to test the source code, first run XAMPP and press start on the control panel. It will automatically set up a local server within your computer and can be accessed through http://localhost/inthemoment. 
+
+![wampp](https://i2.wp.com/pureinfotech.com/wp-content/uploads/2016/03/xampp-control-panel-running.jpg?resize=668%2C434&quality=78&strip=all&ssl=1)
 
 #### For Going Live
+**On UQ**  
+If you have a valid UQ account, you can deploy In the Moment through UQ cloud, a cloud hosting services offered by EAIT. First, you need to set up a web project zone (for the exact steps please refer to https://help.eait.uq.edu.au/smartos/) and then transfer the source code to the zone via FTP software such as FileZilla. (For more information on transfer the files please refer to https://its.uq.edu.au/node/1168/0#0) Lastly the export your local inthemoment database and import the SQL file to phpmyadmin dashboard on the UQ zone you had just set up. (Note please change the start.php to your phpmyadmin account)
+
+**On your own server**
+First set up your own public server by first register a domain name and then finding a web hosting company. After please ensure a MySQL database with phpMyAdmin is installed and export your local inthemoment database and import the SQL file. Please ensure that the app has been fully tested and then moves the source code to the live server through FTP software. 
+
+**Important app viewing instructions**
+In the Moment is designed to be a mobile application and has not been optimised for PC viewing, for the best experience please view the app on mobile.
+
+If you are testing the app on your local computer server, please follow the following instructions to simulate mobile devices with device mode in Chrome DevTools.
+
+1. Open the app on chrome
+
+2. Right click on any part of the page and click **Inspect**.
+
+![step2](https://i.imgur.com/T64S76x.png)
+
+3. The inspector screen should be opened on the right side of the browser. Click on the small phone icon (**device toolbar**) the top header of the inspector.
+
+![step3](https://i.imgur.com/6Yk1q0B.png)
+
+4. You will be presented with a stimulation on how the app will look on mobile within chrome. You can also click on the top header to select a specific device you want to test app on. 
+
+![step4](https://i.imgur.com/EJYoIH8.png)
+
+**Note:** Testing on chrome is not a replacement for testing on a mobile device as the proportion may be different on an actual phone screen. 
 
 ### Using the Application (Walkthrough)
-Given that installation and deployment of the source code was completed successfully, when using the application, follow these main steps to go through the use process of In the Moment. The application is designed with one ‘highlight’ feature, which is the recommendation process, and a series of trivial elements to enhance user experience, such as the comparison graph on the ‘home’ page, and the ‘explore’ and ‘account’ pages.
 
-**1.  Pre-application  instructions**  
-   1. If deploying the application through UQ server, the user will need to first enter their UQ login details in order to get access to the rest of the application’s pages. 
+**Note:** If you want to use and walk through the current prototype on the UQ zone, you must have a valid UQ login. If you want access to the zone and database you must contact BubbleTea….Mmm. However, it is recommended to download the source code from Github and then set up your own server to test and deploy the app.
+
+Given that installation and deployment of the source code was completed successfully, when using the application, follow these main steps to go through the use process of In the Moment. The application is designed with one ‘highlight’ feature, which is the recommendation process, and a series of trivial elements to enhance the user experience, such as the comparison graph on the ‘home’ page, and the ‘explore’ and ‘account’ pages. (For a more visual representation of the application walkthrough, please see brochure/ user guide at the end)
+
+**1.  Pre-application  instructions** 
+   1. If deploying the application through UQ server, you will need to first enter your UQ login details in order to get access to the rest of the application’s pages. 
    
       OR       
       
-   2.  If deploying from an external server, the user can skip having to enter their UQ login as there should be no other pre-application screens.
+   2.  If deploying from an external server, the you can skip having to enter your UQ login as there should be no other pre-application screens. 
     
-**2.  Login** - Once step 1 has been completed, the user will be shown a login screen that asks them to input their name. Without successfully submitting this screen, the user will not be able to access any of the other pages in the app as there is no valid session recognised by the system. Once the user enters their name, and submits the form, they will be redirected to a tutorial page.
+**2.  Login** - Once step 1 has been completed, you will be shown a login screen that asks them to input their name. Without successfully submitting this screen, you will not be able to access any of the other pages in the app as there is no valid session recognised by the system. Once you enters your name, and submits the form, you will be redirected to a tutorial page. 
     
-**3.  Tutorial** - In the Moment has a on-boarding tutorial designed to quickly introduce users to the process they will follow when they do start using the application’s recommendation system. The tutorial page affords users two options:
-   1.  **Read through tutorial** - the tutorial is presented in a card format that users can click through. Once the user has read through the tutorial, and clicked ‘finish’, they will be directed to the persona selection page.
-   2. **Skip** - users are given the option to skip the tutorial if they believe that they should be able to use the app without it. On clicking the button to skip, users will be directed to the persona selection page.
+**3.  Tutorial** - In the Moment has a onboarding tutorial designed to quickly introduce you to the process you will follow when you do start using the application’s recommendation system. The tutorial page affords you with two options: 
+   1.  **Read through tutorial** - the tutorial is presented in a card format that you can click through. Once you have read through the tutorial, and clicked ‘finish’, you will be directed to the persona selection page. 
+   2. **Skip** - you are given the option to skip the tutorial if they believe that you should be able to use the app without it. On clicking the button to skip, you will be directed to the persona selection page. 
     
-**4.  Persona Selection** - The persona selection page essentially offers users a selection of personas presented in a carousel card format. Users will be required to choose one before they can be directed to the next step of the setup process. Once a persona has been selected, the user will be forwarded to the interest selection page.
+**4.  Persona Selection** - The persona selection page essentially offers you a selection of personas presented in a carousel card format. You will be required to choose one before they can be directed to the next step of the setup process. Once a persona has been selected, the you will be forwarded to the interest selection page. 
     
-**5.  Interest Selection** - The interest selection page the last step of the setup process and is where users are presented with a number of ‘interest’ boxes which are generated dynamically depending on the user’s selected persona from the previous page. Users are allowed to choose between minimum one to all the displayed options. Once the interest boxes have been selected, users will need to submit their selection through a submit button. Once submitted, users will be taken to the index page.
+**5.  Interest Selection** - The interest selection page the last step of the setup process and is where you are presented with a number of ‘interest’ boxes which are generated dynamically depending on the your selected persona from the previous page. You are allowed to choose between minimum one to all the displayed options. Once the interest boxes have been selected, you will need to submit their selection through a submit button. Once submitted, you will be taken to the index page. 
     
-**6. Home (‘index’ page)** - The home page of the application, the main element here is the graph display that shows a vertical bar graph that displays the total free time the user has spent in a day (represented by the blue columns) compared to the average free time that others have spent (represented in the orange columns). The home page is essentially the starting point of the application, post-setup. This is where users will first see the global footer bar, which contains 3 main elements - home, start and explore. The home button redirects to the home page, the explore button redirects to the explore page and the start button is what users need to press in order to start the recommendation process.
+**6. Home (‘index’ page)** - The home page of the application, the main element here is the graph display that shows a vertical bar graph that displays the total free time you has spent in a day (represented by the blue columns) compared to the average free time that others have spent (represented in the orange columns). The home page is essentially the starting point of the application, post-setup. This is where you will first see the global footer bar, which contains 3 main elements - home, start and explore. The home button redirects to the home page, the explore button redirects to the explore page and the start button is what you need to press in order to start the recommendation process. 
 
 **7. Recommendation Process**
 
-   1.  **Start** - to start the recommendation process, users will need to first tap on the blue start button located in the middle of the footer bar. 
+   1.  **Start** - to start the recommendation process, you will need to first tap on the blue start button located in the middle of the footer bar. 
     
-   10.  **Input time**  - after the uses selects ‘start’, they will be directed to a page that asks them to input a number between 10-300 minutes into a textfield. After inputting a number and entering the form, the user will be taken to a second page which asks them to select activity categories that interests them. 
+   10.  **Input time**  - after you had selected ‘start’, you will be directed to a page that asks you to input a number between 10-300 minutes into a textfield. After inputting a number and entering the form, you will be taken to a second page which asks them to select activity categories that interests you. 
     
-   11.  **Select activity categories** - the category selection page shows the users various activity categories that they can select, depending on what they feel like doing. The category selection allows the user to select more than one category. Once users have selected their category(s), they will have to submit their selection in order to progress to the next step, which is where activity recommendations are presented to them.
+   11.  **Select activity categories** - the category selection page shows you various activity categories that you can select, depending on what you feel like doing. The category selection allows you to select more than one category. Once you have selected their category(s), you will have to submit your selection in order to progress to the next step, which is where activity recommendations are presented to you.
     
-   12.  **Browse through provided options** - based on the persona selected, the current time of the day, the current amount of free time the user has and the activity categories selected, the system will compile a pool of recommendations to present to the user in a card format. The user is able to swipe through these cards and select an activity that interests them. Upon selection of a particular activity, they will be taken to a more detailed activity card dedicated to just that activity. If there is currently no activity that can fulfil the criteria, a message will be shown to the user explaining to them that currently no suitable activity can be found for them. 
+   12.  **Browse through provided options** - based on the persona selected, the current time of the day, the current amount of free time the you has and the activity categories selected, the system will compile a pool of recommendations to present to you in a card format. You will be able to swipe through these cards and select an activity that interests you. Upon selection of a particular activity, you will be taken to a more detailed activity card dedicated to just that activity. If there is currently no activity that can fulfil the criteria, a message will be shown to you explaining that currently no suitable activity can be found for you. 
 
-   13.  **Viewing selected option** - in the activity card, the user will see an image representative of the activity, or a map if the activity is location based, at the top section of the card. If the activity requires instructions, the card will also contain quick links to tutorials to give users a ‘quick start’ directive. Having finished the activity, users can click back to the home page.
+   13.  **Viewing selected option** - in the activity card, you will see an image representative of the activity, or a map if the activity is location based, at the top section of the card. If the activity requires instructions, the card will also contain quick links to tutorials to give users a ‘quick start’ directive. Having finished the activity, you can click back to the home page.
 
-   14.  **Time tracker** - back on the index page, the system will register that the user has spent the time they input completing the activity. This is then communicated to the user through a dialog popup. The graph on the homepage will adjust the appropriate column to reflect the increased free time the user has spent. 
+   14.  **Time tracker** - if you go back to the index page, the system will register that you have spent the time they input completing the activity. This is then communicated to the user through a dialog popup. The graph on the homepage will adjust the appropriate column to reflect the increased free time you have spent. 
     
-**8.  Explore** - Users can go to the explore page to view recommendations that they might like but are not recommended using the full recommendation process (e.g. not considering the current time or the user’s current amount of free time). The page also displays activities that that have been trending and pursued by other people recently. 
+**8.  Explore** - You can go to the explore page to view recommendations that you might like but are not recommended using the full recommendation process (e.g. not considering the current time or the user’s current amount of free time). The page also displays activities that that have been trending and pursued by other people recently.
     
-**9.  Account (Logout)** - Should the user wish to log out of the application, they can tap the global account icon on the top right corner of the page and it will take them to the account page. This page has a logout button at the bottom for users to click in order to log themselves out of the app. 
+**9.  Account (Logout)** - If you wish to log out of the application, you can tap the global account icon on the top right corner of the page and it will take you to the account page. This page has a logout button at the bottom for you to click in order to log out of the app. (Note: Once you had signed out, the app will not store your previous username, interest etc. Therefore if you go back to the app, you have to go through the whole process of setting up a persona, interest etc.)
 
 
 ## Promotional Materials
