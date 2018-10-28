@@ -118,9 +118,15 @@ Please note that both the vendor and data scraping folder are not currently used
 
 ## Deployment Guide & Usage Instructions
 ### Deployment & Installation Guide
-In the Moment is a progressive web app, the deployment process is very similar to deploying a traditional website. It is recommended that the developers first test the app on their local server and then transfer it to the actual server. Below is a guide for developers to first deploy the site on their own environment and then the live server. 
+In the Moment is a progressive web app, therefore the deployment process is very similar to deploying a website. It is recommended that the developers first test the app on their local server and then transfer it to the actual server. Therefore below is a guide to deploying the app on both a local and a live server. 
 
 #### For Development & Testing
+In order to deploy In The Moment into a testing server, it is recommended to first download XAMPP, (https://www.apachefriends.org/index.html) a free and open-source cross-platform (windows and mac) PHP development environment. 
+
+Once XAMPP has been downloaded and installed, go to XAMPP folder within your computer, typically within C:\xampp\htdocs\. Then create a new folder called *inthemoment* and transfer all source code within. 
+
+In the Moment also requires a relational database server and XAMPP also includes phpmyadmin, an administration tool for MySQL. To access it, open wamp, navigate to http://localhost/phpmyadmin and log in through root account. Once the phpmyadmin dashboard is opened, create a new database and name it *inthemoment*. Then click on import on the header navigation and choose a file to import. In the Moment source code, there is a file called inthemoment.sql, import that file. It includes all necessary queries to set up the required tables and data. 
+
 
 #### For Going Live
 
