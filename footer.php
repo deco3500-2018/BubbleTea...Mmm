@@ -1,3 +1,4 @@
+<!-- Global footer bar -->
 <ons-bottom-toolbar>
 	<div class="tabbar">
 		<label class="tabbar__item" onclick="location.href='index.php'">
@@ -23,7 +24,5 @@
 				<div class="tabbar__label">Explore</div>
 			</button>
 		</label>
-		
-		
 	</div>
 </ons-bottom-toolbar>
