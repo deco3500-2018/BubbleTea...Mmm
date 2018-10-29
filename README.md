@@ -39,6 +39,9 @@ The BubbleTea...Mmm WIKI for In the Moment contains multiple pages documenting t
 #### Development
 [Week 9](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-9-&-Mid-Sem-Development), [Week 10](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-10-Development), [Week 11](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Development), [Week 12](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-12-Development), [Week 13](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-13-Development)
 
+#### Feedback and Reflection
+[Week 9 Stand up](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/Week-9-Stand-up), [Week 11 Stand up](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-11-Stand-up), [Week 13 Showcase](https://github.com/deco3500-2018/BubbleTea...Mmm/wiki/WEEK-13-Showcase)
+
 ***
 
 ## Code Guide
